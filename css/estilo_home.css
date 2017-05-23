@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+img.logo_modulos{
+    width:80px;
+}
+
+.titulo_modulos{
+    color:#777; 
+    font-size: 15pt;
+}
+
+div#home_Titulo {
+    width: 900px;
+    height: 30px;
+    background-color: white;
+    margin: 20px 50px 50px 50px; /*margem em relacao a objetos de fora*/
+    padding: 10px 10px 0px 0px; /*margem em relacao a objetos de dentro*/
+}
+
+div.blocos_modulos {
+
+    width: 900px;
+    height: 100px;
+    background-color: white;
+    margin: 20px 50px 50px 50px; /*margem em relacao a objetos de fora*/
+    box-shadow: 0px 0px 10px gray;
+    padding: 10px 10px 10px 10px; /*margem em relacao a objetos de dentro*/
+    
+}
+
+
+

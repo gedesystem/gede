@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+div#area_login{
+
+    height: 550px;
+    width: 400px;
+    box-shadow: 0px 0px 10px gray;
+    margin-left: 35%;
+    margin-top: 50px;  
+    background-color: white;
+
+}
+
+div#area_login_interna{
+
+    padding: 10px 10px 10px 10px; /*margem em relacao a objetos de dentro*/
+
+}
+
+p{
+    color: #3c3c3c;
+}
+
+p#nome_sistema{
+    text-align: center;
+}
+
+div#botao_entrada{
+    margin-left: 30%;
+}
+
+p#outras_opcoes_entrada{
+    text-align: center;
+    margin-top: 50px;
+    
+}
