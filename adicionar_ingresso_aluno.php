@@ -1,22 +1,27 @@
-<?php include("topo_pagina.php"); ?>
+<?php
+include("topo_pagina.php");
+error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+require_once('funcoes_uteis.php');
+$id_gede = $_POST["id_gede"];
+?>
 
 <section>
 
     <form method="post" action=".php">
-        
+
         <h2 class="Titulo">Dados de Ingresso de Aluno</h2> 
 
         <HR NOSHADE SIZE="4">
-        
+
         <p>Tipo de Escola que Concluiu o Ensino Médio:</p>
         <div class="radio">
             <label><input type="radio" name="nTipoEscola" value="Privada" checked/>Privada</label>
             <label><input type="radio" name="nTipoEscola" value="Publica">Pública</label>
             <label><input type="radio" name="nTipoEscola" value="NaoDispoe">Não Dispõe da Informação</label>
         </div>
-        
+
         <p>Semestre de Ingresso no Curso:<input type="text" class="form-control" required="required" name="nSemestreIngresso" pattern="[0-9]+$" placeholder="Semestre de Ingresso. Utilize somente números."></p>
-        
+
         <p>Forma de Ingresso/Seleção:</p>
         <div class="radio">
             <label><input type="radio" name="nFormaIngresso" value="Vestibular" checked/>Vestibular</label>
@@ -30,13 +35,13 @@
             <label><input type="radio" name="nFormaIngresso" value="VagasRemanescentes">Seleção para Vagas Remanescentes</label>
             <label><input type="radio" name="nFormaIngresso" value="VagasEspeciais">Seleção para Vagas de Programas Especiais</label>
         </div>
-        
+
         <p>Participa de Programa de Reserva de Vagas?:</p>
         <div class="radio">
             <label><input type="radio" name="nReservaVagas" value="Sim" checked/>Sim</label>
             <label><input type="radio" name="nReservaVagas" value="Nao">Não</label>
         </div>
-        
+
         <p>Tipo de Programa de Reserva de Vagas:</p>
         <div class="radio">
             <label><input type="radio" name="nTipoReserva" value="Etnico" checked/>Étnico</label>
@@ -45,19 +50,25 @@
             <label><input type="radio" name="nTipoReserva" value="Social">Social/Renda Familiar</label>
             <label><input type="radio" name="nTipoReserva" value="Outros">Outros</label>
         </div>
-        
+
         <p>Possui Financiamento Estudantil?:</p>
         <div class="radio">
             <label><input type="radio" name="nFinanciamento" value="Sim" checked/>Sim</label>
             <label><input type="radio" name="nFinanciamento" value="Nao">Não</label>
         </div>
-        
-        <HR NOSHADE SIZE="4">
 
+        <br>
         <div id="botoesAdicao">
-            <button type="submit" class="btn btn-primary" value="salvar" >Salvar</button>
+            <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>
+        </div>
+
+        <HR NOSHADE SIZE="4">
     </form>
-    <button type="button" class="btn btn-warning" onclick="location.href = '.php'">Cancelar</button>
+
+    <form method="post" action="detalhes_aluno.php">
+        <input style="display: none;" type="text" name="id_gede" value="<?php echo($id_gede); ?>">
+        <button type="submit" class="btn btn-default"> Voltar </button>
+    </form>
 
 </section>
 

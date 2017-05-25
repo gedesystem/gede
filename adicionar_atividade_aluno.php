@@ -10,7 +10,7 @@ $id_gede = $_POST["id_gede"];
 
         <h2 class="Titulo">Atividade Extracurricular de Aluno</h2> 
 
-        Esta sessão destina-se a qualquer tipo atividade não incluída no currículo do curso.
+        Esta sessão destina-se a qualquer tipo de atividade não incluída no currículo do curso.
         <HR NOSHADE SIZE="4">
 
         <p>Tipo de Atividade Extracurricular:</p>

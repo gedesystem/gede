@@ -64,7 +64,7 @@ $res = mysql_fetch_assoc($resultado);
 
     <div id="botoesAddInformacoes">
 
-        <form style="display: inline;" method="post" action="adicionar_curso_aluno.php">
+        <form style="display: inline;" method="post" action="adicionar_dados_censitarios_curso.php.php">
             <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
             <button type="submit" class="btn btn-default" >Adicionar Dados Censitários</button>
         </form>

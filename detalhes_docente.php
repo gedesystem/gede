@@ -1,4 +1,5 @@
-<?php include("topo_pagina.php"); 
+<?php
+include("topo_pagina.php");
 
 require_once('funcoes_uteis.php');
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
@@ -68,14 +69,14 @@ $res = mysql_fetch_assoc($resultado);
     <h2 class="Titulo">Adicionar Informações</h2> 
     <HR NOSHADE SIZE="4">
 
-        <div id="botoesAddInformacoes">
+    <div id="botoesAddInformacoes">
 
         <form style="display: inline;" method="post" action="">
             <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
             <button type="submit" class="btn btn-default" >Situação do Docente na IES</button>
         </form>
 
-            <form style="display: inline;" method="post" action="adicionar_atuacao_docente.php">
+        <form style="display: inline;" method="post" action="adicionar_atuacao_docente.php">
             <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
             <button type="submit" class="btn btn-default" >Atuação do Docente</button>
         </form>
@@ -90,8 +91,13 @@ $res = mysql_fetch_assoc($resultado);
             <button type="submit" class="btn btn-default" >Curso/Área de Atuação</button>
         </form>
 
+        <form style="display: inline;" method="post" action="adicionar_pos_docente.php">
+            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <button type="submit" class="btn btn-default" >Pós-graduação</button>
+        </form>
+
     </div>
-    
+
 </section>
 
 <?php include("fim_pagina.php"); ?>
