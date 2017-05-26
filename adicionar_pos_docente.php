@@ -52,6 +52,6 @@ $id_gede = $_POST["id_gede"];
 
 </section>
 
-<script src="js/adcionar_pos_docente_form.js"></script>
+<script src="js/set_data_hoje.js"></script>
 
 <?php include("fim_pagina.php"); ?>

@@ -9,7 +9,7 @@ $id_gede = $_POST["id_gede"];
 
     <form method="post" action=".php">
 
-        <h2 class="Titulo">Atuação de Docente</h2> 
+        <h2 class="Titulo">Atuação de Docente</h2>
 
         Esta sessão refere-se aos tipos de trabalho ou atividades realizadas pelo docente na IES.
         <HR NOSHADE SIZE="4">
@@ -30,7 +30,22 @@ $id_gede = $_POST["id_gede"];
         <div class="radio">
             <label><input type="radio" name="nBolsaPesquisa" value="Sim">Sim</label>
             <label><input type="radio" name="nBolsaPesquisa" value="Nao" checked/>Não</label>
-        </div> 
+        </div>
+
+        <HR NOSHADE SIZE="4">
+
+        <p>Data:</p>
+        <input type="text" class="form-control" id="iData" name="nData" required="required"
+            pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+            placeholder="Ex: 31/12/1990.">
+        Usar data de hoje: <input type="radio" name="nDataHoje" onchange="setDataHoje()">
+
+        <HR NOSHADE SIZE="4">
+
+        <p>Observações:</p>
+        <textarea id="iObs" name="nObs" rows="8" cols="80" class="form-control"></textarea>
+
+        <HR NOSHADE SIZE="4">
 
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>
@@ -45,5 +60,7 @@ $id_gede = $_POST["id_gede"];
     </form>
 
 </section>
+
+<script src="js/set_data_hoje.js"></script>
 
 <?php include("fim_pagina.php"); ?>

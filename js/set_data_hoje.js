@@ -1,5 +1,5 @@
 function setDataHoje() {
-    var dataTitulacao = document.getElementById('iData');
+    var data = document.getElementById('iData');
 
     var hoje = new Date();
     var dd = hoje.getDate();
@@ -15,5 +15,5 @@ function setDataHoje() {
     }
 
     hoje = dd+'/'+mm+'/'+yyyy;
-    dataTitulacao.value = hoje;
+    data.value = hoje;
 }
