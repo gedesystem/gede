@@ -11,7 +11,7 @@ $sql_inserir = "INSERT INTO `pos_graduacao`(`data`, `titulacao`, `observacoes`, 
         VALUES ('$data', '$titulacao', '$obs', '$id_gede')";
 
 conexao();
-mysql_query($sql_inserir) or die(" Não foi possivel inserir o professor no banco: " . mysql_errno());
+mysql_query($sql_inserir) or die(" Não foi possivel inserir o registro no banco: " . mysql_errno());
 
 echo '<h2 color: #6d7679>Registro salvo com sucesso!</h2>';
 echo '<h3 color: #6d7679>Redirecionando em 3 segundos...</h3>';

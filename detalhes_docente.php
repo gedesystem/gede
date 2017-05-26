@@ -98,7 +98,7 @@ $res = mysql_fetch_assoc($resultado);
             <button type="submit" class="btn btn-default" >Atuação do Docente</button>
         </form>
 
-        <form style="display: inline;" method="post" action="">
+        <form style="display: inline;" method="post" action="adicionar_vinculacao_docente.php">
             <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
             <button type="submit" class="btn btn-default" >Vinculação</button>
         </form>
