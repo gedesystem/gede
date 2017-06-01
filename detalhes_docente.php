@@ -88,7 +88,7 @@ $res = mysql_fetch_assoc($resultado);
 
     <div id="botoesAddInformacoes">
 
-        <form style="display: inline;" method="post" action="">
+        <form style="display: inline;" method="post" action="adicionar_situacao_docente.php">
             <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
             <button type="submit" class="btn btn-default" >Situação do Docente na IES</button>
         </form>
