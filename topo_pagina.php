@@ -69,16 +69,11 @@ if ((!isset($_SESSION['login']) == true) and ( !isset($_SESSION['senha']) == tru
                             </li>
 
                             <li>
-                                <a href="modulo_cooperadores.php">
-                                    <img id="home" src="imagens/users.png" width="20"/> Cooperadores
+                                <a href="modulo_pessoas.php">
+                                    <img id="home" src="imagens/users.png" width="20"/> Pessoas
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="modulo_credenciais.php">
-                                    <img id="home" src="imagens/credenc.png" width="20"/> Credenciais
-                                </a>
-                            </li>
 
                             <li>
                                 <HR NOSHADE SIZE="6" class="separador_menu">

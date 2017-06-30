@@ -6,13 +6,11 @@ $opcao = $_POST["opcao"];
 $chave = $_POST["nBusca"];
 ?>
 
-?>
-
 <section>
 
     <h2 class="Titulo">Cursos da Instituição</h2>
 
-    <form method="post" style="display: inline;" action=".php">
+    <form method="post" style="display: inline;" action="busca_cursos.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar curso por...">
 
         <button type="submit" class="btn btn-default">
@@ -33,13 +31,13 @@ $chave = $_POST["nBusca"];
     conexao();
 
     if ($opcao == "codigo_curso") {
-        $sql_seleciona = "SELECT codigo_curso, nome, id_gede FROM cursos_dados_cadastrais WHERE codigo_curso='$chave'";
+        $sql_seleciona = "SELECT codigo_curso, nome, grau, id FROM cursos_dados_cadastrais WHERE codigo_curso='$chave'";
         $resultado = seleciona($sql_seleciona);
     } else if ($opcao == "nome") {
-        $sql_seleciona = "SELECT codigo_curso, nome, id_gede FROM cursos_dados_cadastrais WHERE nome LIKE '%$chave%'";
+        $sql_seleciona = "SELECT codigo_curso, nome, grau, id FROM cursos_dados_cadastrais WHERE nome LIKE '%$chave%'";
         $resultado = seleciona($sql_seleciona);
     } else if ($opcao == "grau") {
-        $sql_seleciona = "SELECT codigo_curso, nome, id_gede FROM cursos_dados_cadastrais WHERE grau_academico='$chave'";
+        $sql_seleciona = "SELECT codigo_curso, nome, grau, id FROM cursos_dados_cadastrais WHERE grau_academico='$chave'";
         $resultado = seleciona($sql_seleciona);
     }
     ?>
@@ -64,12 +62,12 @@ $chave = $_POST["nBusca"];
                     $parImpar = !($i % 2) ? "par" : "impar";
                     echo('<tr id="' . $parImpar . '">' .
                     '<td>' . $res['codigo_curso'] . '</td>' .
-                    '<td>' . $res['cpf'] . '</td>' .
+                    '<td>' . $res['nome'] . '</td>' .
                     '<td>' . $res['grau'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="detalhes_curso.php" > <input style="display: none;" type="text" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="detalhes_curso.php" > <input style="display: none;" type="text" name="codigo_curso" value="' . $res['codigo_curso'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-                    '<form style="display: inline;" method="post" action="bd_exclusao_curso.php" > <input type="text" style="display: none;" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="bd_exclusao_curso.php" > <input type="text" style="display: none;" name="codigo_curso" value="' . $res['codigo_curso'] . '">'
                     . '<button type="submit" class="btn btn-danger">Excluir</button> </form>' .
                     '</td>' .
                     '</tr>');

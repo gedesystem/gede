@@ -2,7 +2,7 @@
 include("topo_pagina.php");
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 require_once('funcoes_uteis.php');
-$id_gede = $_POST["id_gede"];
+$matricula_uefs = $_POST["matricula_uefs"];
 ?>
 
 <section>
@@ -55,7 +55,7 @@ $id_gede = $_POST["id_gede"];
 
     </form>
     <form method="post" action="detalhes_docente.php">
-        <input style="display: none;" type="text" name="id_gede" value="<?php echo($id_gede); ?>">
+        <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
         <button type="submit" class="btn btn-default"> Voltar </button>
     </form>
 

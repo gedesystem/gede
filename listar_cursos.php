@@ -6,13 +6,12 @@ $opcao = $_POST["opcao"];
 $chave = $_POST["nBusca"];
 ?>
 
-?>
 
 <section>
 
     <h2 class="Titulo">Cursos da Instituição</h2>
 
-    <form method="post" style="display: inline;" action=".php">
+    <form method="post" style="display: inline;" action="busca_cursos.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar curso por...">
 
         <button type="submit" class="btn btn-default">
@@ -32,7 +31,7 @@ $chave = $_POST["nBusca"];
     <?php
     conexao();
     
-    $sql_seleciona = "SELECT codigo_curso, grau, nome, id_gede FROM cursos_dados_cadastrais";
+    $sql_seleciona = "SELECT codigo_curso, grau, nome, id FROM cursos_dados_cadastrais";
     $resultado = seleciona($sql_seleciona);
     
     ?>
@@ -60,9 +59,9 @@ $chave = $_POST["nBusca"];
                     '<td>' . $res['nome'] . '</td>' .
                     '<td>' . $res['grau'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="detalhes_curso.php" > <input style="display: none;" type="text" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="detalhes_curso.php" > <input style="display: none;" type="text" name="codigo_curso" value="' . $res['codigo_curso'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-                    '<form style="display: inline;" method="post" action="bd_exclusao_curso.php" > <input type="text" style="display: none;" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="bd_exclusao_curso.php" > <input type="text" style="display: none;" name="codigo_curso" value="' . $res['codigo_curso'] . '">'
                     . '<button type="submit" class="btn btn-danger">Excluir</button> </form>' .
                     '</td>' .
                     '</tr>');
