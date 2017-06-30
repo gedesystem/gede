@@ -3,11 +3,11 @@
 require_once('funcoes_uteis.php');
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
-$id_gede = $_POST["id_gede"];
+$codigo_curso = $_POST["codigo_curso"];
 
 conexao();
 
-$sql_seleciona = "SELECT * FROM cursos_dados_cadastrais WHERE id_gede = '" . $id_gede . "'";
+$sql_seleciona = "SELECT * FROM cursos_dados_cadastrais WHERE codigo_curso = '" . $codigo_curso . "'";
 $resultado = seleciona($sql_seleciona);
 
 
@@ -21,11 +21,11 @@ $res = mysql_fetch_assoc($resultado);
 
     <div id="botoesEdicao">
         <form style="display: inline;" method="post" action="edicao_curso.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="codigo_curso" value="<?php echo($res['codigo_curso']); ?>">
             <button type="submit" class="btn btn-default" onclick="return confirm('Deseja editar?')">Editar</button>
         </form>
         <form style="display: inline;" method="post" action="bd_exclusao_curso.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="codigo_curso" value="<?php echo($res['codigo_curso']); ?>">
             <button type="submit" class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">Excluir</button>
         </form>
 
@@ -65,7 +65,7 @@ $res = mysql_fetch_assoc($resultado);
     <div id="botoesAddInformacoes">
 
         <form style="display: inline;" method="post" action="adicionar_dados_censitarios_curso.php.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="codigo_curso" value="<?php echo($res['codigo_curso']); ?>">
             <button type="submit" class="btn btn-default" >Adicionar Dados Censitários</button>
         </form>
 

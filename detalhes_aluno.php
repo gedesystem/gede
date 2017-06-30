@@ -4,11 +4,11 @@ include("topo_pagina.php");
 require_once('funcoes_uteis.php');
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
-$id_gede = $_POST["id_gede"];
+$matricula_uefs = $_POST["matricula_uefs"];
 
 conexao();
 
-$sql_seleciona = "SELECT * FROM alunos_dados_cadastrais WHERE id_gede = '" . $id_gede . "'";
+$sql_seleciona = "SELECT * FROM alunos_dados_cadastrais WHERE matricula_uefs = '" . $matricula_uefs . "'";
 $resultado = seleciona($sql_seleciona);
 
 
@@ -21,11 +21,11 @@ $res = mysql_fetch_assoc($resultado);
 
     <div id="botoesEdicao">
         <form style="display: inline;" method="post" action="edicao_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" onclick="return confirm('Deseja editar?')">Editar</button>
         </form>
         <form style="display: inline;" method="post" action="bd_exclusao_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir?')">Excluir</button>
         </form>
 
@@ -67,22 +67,22 @@ $res = mysql_fetch_assoc($resultado);
     <div id="botoesAddInformacoes">
 
         <form style="display: inline;" method="post" action="adicionar_curso_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Informações do Curso</button>
         </form>
 
         <form style="display: inline;" method="post" action="adicionar_mobilidade_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Mobilidade Acadêmica</button>
         </form>
 
         <form style="display: inline;" method="post" action="adicionar_ingresso_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Informações de Ingresso</button>
         </form>
 
         <form style="display: inline;" method="post" action="adicionar_atividade_aluno.php">
-            <input style="display: none;" type="text" name="id_gede" value="<?php echo($res['id_gede']); ?>">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Atividade Extracurricular</button>
         </form>
 

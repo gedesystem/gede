@@ -31,16 +31,16 @@ $chave = $_POST["nBusca"];
     conexao();
 
     if ($opcao == "id_inep") {
-        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id_gede FROM alunos_dados_cadastrais WHERE id_inep='%$chave%'";
+        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id FROM alunos_dados_cadastrais WHERE id_inep='%$chave%'";
         $resultado = seleciona($sql_seleciona);
     } else if ($opcao == "nome") {
-        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id_gede FROM alunos_dados_cadastrais WHERE nome LIKE '%$chave%'";
+        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id FROM alunos_dados_cadastrais WHERE nome LIKE '%$chave%'";
         $resultado = seleciona($sql_seleciona);
     } else if ($opcao == "cpf") {
-        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id_gede FROM alunos_dados_cadastrais WHERE cpf LIKE '%$chave%'";
+        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id FROM alunos_dados_cadastrais WHERE cpf LIKE '%$chave%'";
         $resultado = seleciona($sql_seleciona);
     } else if ($opcao == "matricula_uefs") {
-        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id_gede FROM alunos_dados_cadastrais WHERE matricula_uefs LIKE '%$chave%'";
+        $sql_seleciona = "SELECT id_inep, cpf, nome, matricula_uefs, id FROM alunos_dados_cadastrais WHERE matricula_uefs LIKE '%$chave%'";
         $resultado = seleciona($sql_seleciona);
     }
     ?>
@@ -68,9 +68,9 @@ $chave = $_POST["nBusca"];
                     '<td>' . $res['cpf'] . '</td>' .
                     '<td>' . $res['nome'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="detalhes_aluno.php" > <input style="display: none;" type="text" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="detalhes_aluno.php" > <input style="display: none;" type="text" name="matricula_uefs" value="' . $res['matricula_uefs'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-                    '<form style="display: inline;" method="post" action="bd_exclusao_aluno.php" > <input type="text" style="display: none;" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="bd_exclusao_aluno.php" > <input type="text" style="display: none;" name="matricula_uefs" value="' . $res['matricula_uefs'] . '">'
                     . '<button type="submit" class="btn btn-danger">Excluir</button> </form>' .
                     '</td>' .
                     '</tr>');

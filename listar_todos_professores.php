@@ -10,7 +10,7 @@ $chave = $_POST["nBusca"];
 
     <h2 class="Titulo">Docentes da Instituição</h2>
 
-    <form method="post" style="display: inline;" action=".php">
+    <form method="post" style="display: inline;" action="busca_professores.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar docente por...">
 
         <button type="submit" class="btn btn-default">
@@ -22,14 +22,13 @@ $chave = $_POST["nBusca"];
             <label><input type="radio" name="opcao" value="nome" checked/>Nome</label>
             <label><input type="radio" name="opcao" value="cpf">CPF</label>
             <label><input type="radio" name="opcao" value="matricula_uefs">Matrícula</label>
-            <label><input type="radio" name="opcao" value="codigo_departamento">Departamento</label>
         </div>
     </form>
 
     <?php
     conexao();
 
-    $sql_seleciona = "SELECT matricula_uefs, cpf, nome, id_gede, id_inep FROM docentes_dados_cadastrais";
+    $sql_seleciona = "SELECT matricula_uefs, cpf, nome, id_inep FROM docentes_dados_cadastrais";
     $resultado = seleciona($sql_seleciona);
     
     ?>
@@ -58,9 +57,9 @@ $chave = $_POST["nBusca"];
                     '<td>' . $res['cpf'] . '</td>' .
                     '<td>' . $res['nome'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="detalhes_docente.php" > <input style="display: none;" type="text" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="detalhes_docente.php" > <input style="display: none;" type="text" name="matricula_uefs" value="' . $res['matricula_uefs'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-                    '<form style="display: inline;" method="post" action="bd_exclusao_professor.php" > <input type="text" style="display: none;" name="id_gede" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="bd_exclusao_professor.php" > <input type="text" style="display: none;" name="matricula_uefs" value="' . $res['matricula_uefs'] . '">'
                     . '<button type="submit" class="btn btn-danger" onclick="return confirm(\'Deseja mesmo excluir?\')">Excluir</button> </form>' .
                     '</td>' .
                     '</tr>');

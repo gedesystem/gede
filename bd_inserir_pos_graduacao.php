@@ -2,12 +2,12 @@
 require_once('funcoes_uteis.php');
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
-$id_gede = $_POST["id_gede"];
+$matricula_uefs = $_POST["matricula_uefs"];
 $data = DateTime::createFromFormat('d/m/Y', $_POST["nData"])->format('Y-m-d');
 $titulacao = $_POST["nPosGraduacaoDocente"];
 $obs = $_POST["nObs"];
 
-$sql_inserir = "INSERT INTO `pos_graduacao`(`data`, `titulacao`, `observacoes`, `id_docente`)
+$sql_inserir = "INSERT INTO `docentes_pos_graduacao`(`data`, `titulacao`, `observacoes`, `id_docente`)
         VALUES ('$data', '$titulacao', '$obs', '$id_gede')";
 
 conexao();
