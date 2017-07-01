@@ -68,7 +68,7 @@ abstract class ImportStrategy
 
             $linha = (count($linha) > $this->numColunas) ?
                 array_slice($linha, 0, $this->numColunas) :
-                $linha;    
+                $linha;
 
             try {
                 $result = $this->validarLinha($linha);
@@ -104,10 +104,12 @@ abstract class ImportStrategy
     protected function formatarData(array $linha, ...$posicoes)
     {
         foreach ($posicoes as $posicao) {
-            if (isset($linha[$posicao]) &&
-                ($date = DateTime::createFromFormat('d/m/Y', $linha[$posicao])))
+            if (isset($linha[$posicao]) && is_string($linha[$posicao])) {
+                $date = DateTime::createFromFormat('d/m/Y', $linha[$posicao]);
                 $linha[$posicao] = $date->format('Y-m-d');
-            else throw new ImportException(
+            } elseif (isset($linha[$posicao]) && ($linha[$posicao] instanceof DateTime)) {
+                $linha[$posicao] = $linha[$posicao]->format('Y-m-d');
+            } else throw new ImportException(
                 "Linha "
                 . $this->leitorExcel->getlinhaIndex()
                 . ": Erro processando data.
@@ -125,12 +127,13 @@ abstract class ImportStrategy
 class ImportException extends Exception {}
 
 class SaveException extends Exception {
-    function __construct($linha)
+    function __construct($linha, $mensagem="")
     {
         parent::__construct(
             "Linha "
             . $linha
             . ": " . ((mysql_errno() == 1644) ? mysql_error()
+            : (mysql_errno() == 0) ? $mensagem
             : ("Erro ao salvar o registro. Código " . mysql_errno()))
         );
     }
