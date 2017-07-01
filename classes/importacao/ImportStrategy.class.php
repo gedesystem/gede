@@ -39,10 +39,18 @@ abstract class ImportStrategy
         $this->leitorExcel = new LeitorExcel($arquivo);
         $this->insertCount = 0;
 
+        $tituloColunas = $this->leitorExcel->proximaLinha();
+        //Verificando se existem colunas vazias a direita da tabela
+        //inseridas pelo usuário
+        $colunasVazias = 0;
+        for ($i = count($tituloColunas) - 1; $i >= 0; $i--) {
+            if ($tituloColunas[$i] == "") $colunasVazias++;
+        }
+
         // Conta o numero de elementos da linha contendo os titulos das colunas
         // Necessário porque as vezes o spout retorna um array menor
         // caso exitam celulas vazias na extremidade direita de uma linha
-        $this->numColunas = count($this->leitorExcel->proximaLinha());
+        $this->numColunas = count($tituloColunas) - $colunasVazias;
 
         // pula as demais linhas sem dados
         for ($i = 0; $i < 3; $i++) $this->leitorExcel->proximaLinha();
@@ -57,6 +65,10 @@ abstract class ImportStrategy
 
         // Enquanto a linha retornada não for nula
         while (($linha = $this->leitorExcel->proximaLinha()) != NULL) {
+
+            $linha = (count($linha) > $this->numColunas) ?
+                array_slice($linha, 0, $this->numColunas) :
+                $linha;    
 
             try {
                 $result = $this->validarLinha($linha);
