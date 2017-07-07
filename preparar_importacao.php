@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'migracao_util.php';
 require_once 'classes/importacao/ImportFactory.class.php';
 

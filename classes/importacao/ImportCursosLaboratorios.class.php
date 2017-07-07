@@ -1,13 +1,13 @@
 <?php
 require_once 'classes/importacao/ImportStrategy.class.php';
+
 /**
  *
  */
-class ImportSituacaoDocentes extends ImportStrategy
+class ImportCursosLaboratorios extends ImportStrategy
 {
     protected function validarLinha(array $linha)
     {
-        $linha = $this->formatarData($linha, 3, 4);
 
         return $linha;
     }
@@ -17,12 +17,11 @@ class ImportSituacaoDocentes extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `docentes_situacoes_docentes`(
-            `matricula_uefs`, `situacao`, `observacoes`,
-            `inicio`, `termino`, `fonte`, `colaborador`)
-            SELECT `matricula_uefs`, '$valores', '$colaborador'
-            FROM `docentes_dados_cadastrais`
-            WHERE `matricula_uefs`=" . $linha[0]);
+        $sql = ("INSERT INTO `cursos_laboratorio`(
+            `codigo_curso`, `codigo_laboratorio`, `fonte`, `colaborador`)
+            SELECT `codigo_curso`, '$valores', '$colaborador'
+            FROM `cursos_dados_cadastrais`
+            WHERE `codigo_curso`=" . $linha[0]);
 
         if (mysql_query($sql)) {
             $linhasInseridas = mysql_affected_rows();

@@ -18,18 +18,17 @@ class ImportDocentes extends ImportStrategy
         $sql = "INSERT INTO `docentes_dados_cadastrais`(
             `id_inep`, `id_ies`, `matricula_uefs`, `cpf`,
             `documento_estrangeiro`, `nome`, `nome_mae`,
-            `sexo`, `cor_raca`, `data_nascimento`,
-            `nacionalidade`, `codigo_pais_origem`,
-            `codigo_uf`, `codigo_municipio`,
-            `deficiencia_cegueira`, `deficiencia_baixa_visao`,
-            `deficiencia_surdez`, `deficiencia_auditiva`,
-            `deficiencia_fisica`, `deficiencia_surdocegueira`,
-            `deficiencia_multipla`, `deficiencia_intelectual`,
-            `uf_nascimento`, `codigo_departamento`) VALUES ";
+            `sexo`, `cor_raca`, `data_nascimento`, `nacionalidade`,
+            `codigo_pais_origem`, `codigo_uf`, `codigo_municipio`,
+            `deficiencia`, `deficiencia_cegueira`, `deficiencia_baixa_visao`,
+            `deficiencia_surdez`, `deficiencia_auditiva`, `deficiencia_fisica`,
+            `deficiencia_surdocegueira`, `deficiencia_multipla`,
+            `deficiencia_intelectual`, `fonte`, `colaborador`) VALUES ";
 
         $valores = implode("', '", $linha);
+        $colaborador = $_SESSION['nome'];
 
-        if (mysql_query(($sql . "('$valores')"))) return mysql_affected_rows();
+        if (mysql_query(($sql . "('$valores', '$colaborador')"))) return mysql_affected_rows();
         else throw new SaveException($this->leitorExcel->getlinhaIndex());
     }
 }

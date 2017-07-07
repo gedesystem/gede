@@ -1,13 +1,14 @@
 <?php
 require_once 'classes/importacao/ImportStrategy.class.php';
+
 /**
  *
  */
-class ImportSituacaoDocentes extends ImportStrategy
+class ImportAlunosExtensao extends ImportStrategy
 {
     protected function validarLinha(array $linha)
     {
-        $linha = $this->formatarData($linha, 3, 4);
+        $linha = $this->formatarData($linha, 5, 6);
 
         return $linha;
     }
@@ -17,11 +18,12 @@ class ImportSituacaoDocentes extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `docentes_situacoes_docentes`(
-            `matricula_uefs`, `situacao`, `observacoes`,
-            `inicio`, `termino`, `fonte`, `colaborador`)
+        $sql = ("INSERT INTO `aluno_extensao`(
+            `matricula_uefs`, `remuneracao`, `orientador`, `tipo`,
+            `titulo_projeto`, `inicio`, `fim`, `observacao`,
+            `fonte`, `colaborador`)
             SELECT `matricula_uefs`, '$valores', '$colaborador'
-            FROM `docentes_dados_cadastrais`
+            FROM `alunos_dados_cadastrais`
             WHERE `matricula_uefs`=" . $linha[0]);
 
         if (mysql_query($sql)) {
@@ -30,7 +32,7 @@ class ImportSituacaoDocentes extends ImportStrategy
                 throw new SaveException(
                     $this->leitorExcel->getlinhaIndex(),
                     ("Não foi possível salvar esse registro.
-                    Verifique se existe docente com a matrícula " . $linha[0])
+                    Verifique se existe aluno com a matrícula " . $linha[0])
                 );
             else return $linhasInseridas;
         } else throw new SaveException($this->leitorExcel->getlinhaIndex());

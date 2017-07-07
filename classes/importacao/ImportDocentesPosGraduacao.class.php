@@ -3,11 +3,12 @@ require_once 'classes/importacao/ImportStrategy.class.php';
 /**
  *
  */
-class ImportSituacaoDocentes extends ImportStrategy
+class ImportDocentesPosGraduacao extends ImportStrategy
 {
+
     protected function validarLinha(array $linha)
     {
-        $linha = $this->formatarData($linha, 3, 4);
+        $linha = $this->formatarData($linha, 1);
 
         return $linha;
     }
@@ -17,9 +18,9 @@ class ImportSituacaoDocentes extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `docentes_situacoes_docentes`(
-            `matricula_uefs`, `situacao`, `observacoes`,
-            `inicio`, `termino`, `fonte`, `colaborador`)
+        $sql = ("INSERT INTO `docentes_pos_graduacao`(
+            `matricula_uefs`, `data`, `titulacao`,
+            `observacoes`, `fonte`, `colaborador`)
             SELECT `matricula_uefs`, '$valores', '$colaborador'
             FROM `docentes_dados_cadastrais`
             WHERE `matricula_uefs`=" . $linha[0]);
@@ -36,6 +37,5 @@ class ImportSituacaoDocentes extends ImportStrategy
         } else throw new SaveException($this->leitorExcel->getlinhaIndex());
     }
 }
-
 
  ?>
