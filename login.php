@@ -16,6 +16,7 @@ $result = mysql_query($sql);
 if (mysql_num_rows($result) > 0) {
     $_SESSION['login'] = $login;
     $_SESSION['senha'] = $senha;
+    $_SESSION['nome'] = mysql_fetch_row($result)[2];
     header('location:home.php');
 } else {
     unset($_SESSION['login']);

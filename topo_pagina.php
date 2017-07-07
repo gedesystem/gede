@@ -12,7 +12,7 @@ if ((!isset($_SESSION['login']) == true) and ( !isset($_SESSION['senha']) == tru
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        
+
         <meta http-equiv="content-Type" content="text/html; charset=iso-8859-1" />
 
         <link rel="icon" type="image/ico" href="imagens/favicon.ico" />
@@ -98,13 +98,13 @@ if ((!isset($_SESSION['login']) == true) and ( !isset($_SESSION['senha']) == tru
                         <ul >
 
                             <li>
-                                <a href="modulo_cooperadores.php"> <?php echo $_SESSION['login']; ?> </a>
+                                <a href="modulo_cooperadores.php"> <?php echo $_SESSION['nome']; ?> </a>
                             </li>
 
                             <li>
                                 <a href="logout.php">
                                     <img id="home" src="imagens/logout.png" width="30" alt="Sair"/>
-                                </a> 
+                                </a>
                             </li>
 
                         </ul>
