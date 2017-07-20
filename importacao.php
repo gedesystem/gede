@@ -97,7 +97,7 @@
 
 </section>
 
-<script src="js/inportacao_form.js"></script>
+<script src="js/importacao_form.js"></script>
 
 <style>
 .file {
