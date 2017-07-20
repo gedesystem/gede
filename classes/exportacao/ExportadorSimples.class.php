@@ -16,6 +16,8 @@ class ExportadorSimples
 
     protected $categoria;
 
+    protected $registrosRecuperados;
+
     function __construct($categoria)
     {
         $this->categoria = $categoria;
@@ -31,6 +33,8 @@ class ExportadorSimples
 
         $this->escritor = new EscritorExcel($this->arquivo, $tituloColunas);
         $this->escritor->escreverLinha($legenda);
+
+        $this->registrosRecuperados = 0;
     }
 
     public function getNomeDoArquivo()
@@ -40,18 +44,30 @@ class ExportadorSimples
 
     public function fazerExportacao()
     {
+        $report = "";
+        $sucesso = 0;
         conexao();
         $sql = "CALL `recupera_dados_exportacao`($this->categoria)";//"SELECT ".$this->colunas." FROM ".$this->bdTabela;
 
         $result = mysql_query($sql);
         if ($result) {
-            $numRows = mysql_num_rows($result);
+            $this->registrosRecuperados = mysql_num_rows($result);
 
-            for ($i = 0; $i < $numRows; $i++)
+            for ($i = 0; $i < $this->registrosRecuperados; $i++)
                 $this->escritor->escreverLinha($this->recuperarLinha($result));
-        }
+
+            if ($this->registrosRecuperados > 0 )  {
+                $report = "$this->registrosRecuperados registros recuperados";
+                $sucesso = 1;
+            } else $report = "Não existem registros cadastrados para exportação.";
+
+        } else $report = ("Não foi possível recuperar os dados. Codigo de erro: " . mysql_errno());
+
         mysql_close();
         $this->escritor->fecharEscritor();
+
+        $result = array('status' => $sucesso, 'mensagem' => ($report . "<br><br>"));
+        return json_encode($result);
     }
 
     protected function recuperarLinha($result)
@@ -63,6 +79,11 @@ class ExportadorSimples
                 $linha[$indice] = DateTime::createFromFormat('Y-m-d', $linha[$indice])->format('d/m/Y');
             }
         return $linha;
+    }
+
+    public function qtdRegistrosRecuperados()
+    {
+        return $this->registrosRecuperados;
     }
 }
 

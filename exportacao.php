@@ -15,19 +15,29 @@
     <SELECT NAME = "lista_tabelas" id = "lista_tabelas" SIZE=1 onchange="selecionarTabela()">
 
         <OPTION disabled selected value> -- Escolha uma opção -- </OPTION>
-        <OPTION value = 0> Alunos - Dados Cadastrais
-        <OPTION value = 3> Docentes - Dados cadastrais
-        <OPTION value = 4> Docentes Temporários
-        <OPTION value = 5> Ensino Curso EAD
-        <OPTION value = 6> Ensino Graduação Presencial
-        <OPTION value = 7> Ensino Pós-graduação à Distância
-        <OPTION value = 8> Ensino Pós-graduação Presencial
-        <OPTION value = 9> Gestão, Planejamento e Avaliação
-        <OPTION value = 10> Docentes - Pós Graduação
-        <OPTION value = 11> Docentes - Regime de Trabalho
-        <OPTION value = 12> Situação dos Docentes
-        <OPTION value = 13> Vínculo dos Docentes
-        <OPTION value = 14> Vínculo dos Docentes - IES
+        <OPTION value = 0> Alunos - Estágio
+        <OPTION value = 1> Alunos - Extensão
+        <OPTION value = 2> Alunos - Mobilidade Acadêmica
+        <OPTION value = 3> Alunos - Monitoria
+        <OPTION value = 4> Alunos - Pesquisa
+        <OPTION value = 5> Alunos - Dados cadastrais
+        <OPTION value = 6> Cursos - Dados Censitários
+        <OPTION value = 7> Cursos - Dados Cadastrais
+        <OPTION value = 8> Cursos - Laboratórios
+        <OPTION value = 9> Docentes - Extensão
+        <OPTION value = 10> Docentes - Pesquisa
+        <OPTION value = 11> Docentes - Dados Cadastrais
+        <OPTION value = 12> Docentes - Ensino Curso EAD
+        <OPTION value = 13> Docentes - Ensino Graduação Presencial
+        <OPTION value = 14> Docentes - Ensino Pós-graduação à Distância
+        <OPTION value = 15> Docentes - Ensino Pós-graduação Presencial
+        <OPTION value = 16> Docentes - Gestão, Planejamento e Avaliação
+        <OPTION value = 17> Docentes - Pós-graduação
+        <OPTION value = 18> Docentes - Regime de Trabalho
+        <OPTION value = 19> Situação dos Docentes
+        <OPTION value = 20> Docentes Temporários
+        <OPTION value = 21> Docentes - Vínculo aos Cursos
+        <OPTION value = 22> Docentes - Vínculo à IES
 
     </SELECT>
 
@@ -37,6 +47,8 @@
         <br><br>
         <div class="loader"></div> <br>
     </div>
+
+    <div id="result"></div>
 
     <div id="passo2" style="display:none">
         <HR NOSHADE SIZE="4">

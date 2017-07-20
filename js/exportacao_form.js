@@ -19,7 +19,13 @@ function selecionarTabela() {
             if (this.readyState == 4 && this.status == 200) {
                 loader.style.display = 'none';
                 //document.getElementById('tag').value = this.responseText;
-                passo2.style.display = 'block';
+                var result = JSON.parse(this.responseText);
+                if (result.status == 1) {
+                    passo2.style.display = 'block';
+                }
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = result.mensagem;
+
                 opcaoIndex = null;
             }
         };
