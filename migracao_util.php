@@ -28,4 +28,5 @@ const MODELOS = array (
 
 const TEMP_DIR = 'temp/';
 const MODELO_DIR = 'modelos/';
+const EXPORT_DIR = TEMP_DIR . 'export/'
 ?>

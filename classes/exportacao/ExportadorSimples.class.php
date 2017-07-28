@@ -21,7 +21,7 @@ class ExportadorSimples
     function __construct($categoria)
     {
         $this->categoria = $categoria;
-        $this->arquivo = TEMP_DIR . date("d-m-Y") . MODELOS[$this->categoria] . ".xlsx";
+        $this->arquivo = EXPORT_DIR . date("d-m-Y") . MODELOS[$this->categoria] . ".xlsx";
 
         // Pega os titulos das colunas
         $reader = new LeitorExcel(MODELO_DIR . MODELOS[$this->categoria] . ".xlsx");

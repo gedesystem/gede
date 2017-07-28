@@ -1,4 +1,14 @@
-<?php include("topo_pagina.php"); ?>
+<?php
+include("topo_pagina.php");
+include("migracao_util.php");
+// Excluindo arquivos temporários de exportações anteriores
+$files = glob(EXPORT_DIR . '*');
+unset($files[(EXPORT_DIR . '.gitignore')]);
+foreach ($files as $file){
+    unlink($file);
+}
+
+?>
 
 <section>
 
