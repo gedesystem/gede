@@ -3,8 +3,8 @@
 <section>
 
     <form method="post" action=".php">
-        
-        <h2 class="Titulo">Informações básicas do Aluno</h2> 
+
+        <h2 class="Titulo">Informações básicas do Aluno</h2>
 
         <HR NOSHADE SIZE="4">
 
@@ -20,27 +20,27 @@
 
         <p>Sexo do Aluno:</p>
         <div class="radio">
-            <label><input type="radio" name="nSexo" value="Masculino" checked/>Masculino</label>
-            <label><input type="radio" name="nSexo" value="Feminino">Feminino</label>
+            <label><input type="radio" name="nSexo" value="0" checked/>Masculino</label>
+            <label><input type="radio" name="nSexo" value="1">Feminino</label>
         </div>
 
         <p>Nome Completo da Mãe:<input type="text" class="form-control" pattern="[A-Z\s]+$" id="iNomeMae" name="nNomeMae" placeholder="Nome da mãe do Aluno. Utilize letras MAIÚSCULAS."></p>
 
         <p>Cor/Raça do Aluno:</p>
         <div class="radio">
-            <label><input type="radio" name="nCor" value="Branca"> Branca</label>
-            <label><input type="radio" name="nCor" value="Preta"> Preta</label>
-            <label><input type="radio" name="nCor" value="Parda"> Parda</label>
-            <label><input type="radio" name="nCor" value="Amarela"> Amarela</label>
-            <label><input type="radio" name="nCor" value="Indigina"> Indígena</label>
-            <label><input type="radio" name="nCor" value="Docente nao quis declarar cor/raca" checked/> Aluno não quis declarar cor/raça</label>
+            <label><input type="radio" name="nCor" value="1"> Branca</label>
+            <label><input type="radio" name="nCor" value="2"> Preta</label>
+            <label><input type="radio" name="nCor" value="3"> Parda</label>
+            <label><input type="radio" name="nCor" value="4"> Amarela</label>
+            <label><input type="radio" name="nCor" value="5"> Indígena</label>
+            <label><input type="radio" name="nCor" value="0" checked/> Aluno não quis declarar cor/raça</label>
         </div>
 
         <p>Nacionalidade:</p>
         <div class="radio">
-            <label><input type="radio" name="nNacionalidade" value="Brasileira" checked/> Brasileira</label>
-            <label><input type="radio" name="nNacionalidade" value="Brasileira - nascido no exterior ou naturalizado"> Brasileira - nascido no exterior ou naturalizado</label>
-            <label><input type="radio" name="nNacionalidade" value="Estrangeira"> Estrangeira</label>
+            <label><input type="radio" name="nNacionalidade" value="1" checked/> Brasileira</label>
+            <label><input type="radio" name="nNacionalidade" value="2"> Brasileira - nascido no exterior ou naturalizado</label>
+            <label><input type="radio" name="nNacionalidade" value="3"> Estrangeira</label>
         </div>
 
         <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" name="nPaisOrigem" placeholder="País de nascimento. Utilize letras MAIÚSCULAS."></p>
@@ -56,26 +56,26 @@
         <p>Aluno com Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
 
         <div class="radio">
-            <label><input type="radio" name="nDeficienciaHabilidades" value="Sim">Sim</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="Nao" checked/>Não</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="Nao dispoe dessa informacao">Não dispõe dessa informação</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="1">Sim</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="0" checked/>Não</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="2">Não dispõe dessa informação</label>
         </div>
 
         <p>Tipo de Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
 
-        <input type="checkbox" name="nCegueira" value="Sim"> Cegueira
-        <input type="checkbox" name="nBaixaVisao" value="Sim"> Baixa visão
-        <input type="checkbox" name="nSurdez" value="Sim"> Surdez
-        <input type="checkbox" name="nAuditiva" value="Sim"> Deficiência auditiva
-        <input type="checkbox" name="nFisica" value="Sim"> Deficiência física <br>
-        <input type="checkbox" name="nSurdocegueira" value="Sim"> Surdocegueira
-        <input type="checkbox" name="nMultipla" value="Sim"> Deficiência múltipla
-        <input type="checkbox" name="nIntelectual" value="Sim"> Deficiência intelectual
-        <input type="checkbox" name="nAutismo" value="Sim"> Autismo<br>
-        <input type="checkbox" name="nAsperger" value="Sim"> Síndrome de Asperger
-        <input type="checkbox" name="nRett" value="Sim"> Síndrome de Rett
-        <input type="checkbox" name="nTDI" value="Sim"> Transtorno desintegrativo de infância
-        <input type="checkbox" name="nAltasHabilidades" value="Sim"> Altas Habilidades/Superdotação
+        <input type="checkbox" name="nCegueira" value="1"> Cegueira
+        <input type="checkbox" name="nBaixaVisao" value="1"> Baixa visão
+        <input type="checkbox" name="nSurdez" value="1"> Surdez
+        <input type="checkbox" name="nAuditiva" value="1"> Deficiência auditiva
+        <input type="checkbox" name="nFisica" value="1"> Deficiência física <br>
+        <input type="checkbox" name="nSurdocegueira" value="1"> Surdocegueira
+        <input type="checkbox" name="nMultipla" value="1"> Deficiência múltipla
+        <input type="checkbox" name="nIntelectual" value="1"> Deficiência intelectual
+        <input type="checkbox" name="nAutismo" value="1"> Autismo<br>
+        <input type="checkbox" name="nAsperger" value="1"> Síndrome de Asperger
+        <input type="checkbox" name="nRett" value="1"> Síndrome de Rett
+        <input type="checkbox" name="nTDI" value="1"> Transtorno desintegrativo de infância
+        <input type="checkbox" name="nAltasHabilidades" value="1"> Altas Habilidades/Superdotação
 
 
         <HR NOSHADE SIZE="4">
