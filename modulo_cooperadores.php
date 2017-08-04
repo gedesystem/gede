@@ -1,4 +1,5 @@
-<?php include("topo_pagina.php");
+<?php
+include("topo_pagina.php");
 require_once('funcoes_uteis.php');
 ?>
 
@@ -6,12 +7,18 @@ require_once('funcoes_uteis.php');
 
     <h2 class="Titulo">Cooperadores do Sistema</h2>
 
-    <HR NOSHADE SIZE="6">
-
     Os cooperadores são usuários que possuem privilégios para realizar a manutenção da base de dados do sistema. 
 
     <HR NOSHADE SIZE="6">
 
+    <h2 class="Titulo">Ações</h2> 
+
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_cooperador'">Adicionar cooperador</button>
+    </div>
+    
+    <HR NOSHADE SIZE="6">
+    <h2 class="Titulo">Todos os cooperadores</h2> 
     <?php
     conexao();
 
@@ -40,9 +47,9 @@ require_once('funcoes_uteis.php');
                     '<td>' . $res['usuario'] . '</td>' .
                     '<td>' . $res['tipo'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="" > <input style="display: none;" type="text" name="id" value="' . $res['id'] . '">'
+                    '<form style="display: inline;" method="post" action="detalhes_cooperador.php" > <input style="display: none;" type="text" name="id" value="' . $res['id_gede'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-                    '<form style="display: inline;" method="post" action="" > <input type="text" style="display: none;" name="id" value="' . $res['id'] . '">'
+                    '<form style="display: inline;" method="post" action="" > <input type="text" style="display: none;" name="id" value="' . $res['id_gede'] . '">'
                     . '<button type="submit" class="btn btn-danger" onclick="return confirm(\'Deseja mesmo excluir?\')">Excluir</button> </form>' .
                     '</td>' .
                     '</tr>');

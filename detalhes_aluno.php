@@ -59,10 +59,15 @@ $res = mysql_fetch_assoc($resultado);
 
     <p>Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação: <span style="color: #737373"> <?php echo($res['deficiencia_transtorno_superdotacao']); ?> </span></p>
 
-    <br>
-
-    <h2 class="Titulo">Adicionar Informações</h2> 
     <HR NOSHADE SIZE="4">
+    
+    <?php
+    include("info_aluno_mobilidade.php");
+    ?>
+
+    <br>
+    <HR NOSHADE SIZE="4">
+    <h2 class="Titulo">Adicionar Informações</h2> 
 
     <div id="botoesAddInformacoes">
 

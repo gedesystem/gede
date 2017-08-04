@@ -120,6 +120,10 @@ div#botoesEdicao{
     margin-left: 70%;
 }
 
+div#botoesEdicao2{
+    margin-left: 0%;
+}
+
 div#botoesAddInformacoes{
     margin-left: 0%;
 }
@@ -129,7 +133,7 @@ div#botoesAdicao{
 }
 
 p{
-    color: orange;
+    color: #3faf5d;
 }
 
 

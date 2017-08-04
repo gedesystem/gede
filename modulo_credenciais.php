@@ -12,9 +12,15 @@ $resultado = seleciona($sql_seleciona);
 
     <h2 class="Titulo">Credencias ativas no sistema</h2>
 
+    As credenciais permitem que terceiros possam navegar pelo sistema sem a possibilidade de realizar alterações nos dados armazenados. 
+
     <HR NOSHADE SIZE="6">
 
-    As credenciais permitem que terceiros possam navegar pelo sistema sem a possibilidade de realizar alterações nos dados armazenados. 
+    <h2 class="Titulo">Ações</h2>
+
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_credencial'">Criar credencial</button>
+    </div>
 
     <HR NOSHADE SIZE="6">
 
@@ -31,26 +37,26 @@ $resultado = seleciona($sql_seleciona);
                 </tr>
             </thead>
             <tbody>
-<?php
-$i = 1;
-while ($res = mysql_fetch_assoc($resultado)) {
+                <?php
+                $i = 1;
+                while ($res = mysql_fetch_assoc($resultado)) {
 
-    $parImpar = !($i % 2) ? "impar" : "par";
-    echo('<tr id="' . $parImpar . '">' .
-    '<td>' . $i . '</td>' .
-    '<td>' . $res['nome'] . '</td>' .
-    '<td>' . $res['credencial'] . '</td>' .
-    '<td>' .
-    '<form style="display: inline;" method="post" action="" > <input style="display: none;" type="text" name="id" value="' . $res['id'] . '">'
-    . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
-    '<form style="display: inline;" method="post" action="" > <input type="text" style="display: none;" name="id" value="' . $res['id'] . '">'
-    . '<button type="submit" class="btn btn-danger" onclick="return confirm(\'Deseja mesmo excluir?\')">Excluir</button> </form>' .
-    '</td>' .
-    '</tr>');
+                    $parImpar = !($i % 2) ? "impar" : "par";
+                    echo('<tr id="' . $parImpar . '">' .
+                    '<td>' . $i . '</td>' .
+                    '<td>' . $res['nome'] . '</td>' .
+                    '<td>' . $res['credencial'] . '</td>' .
+                    '<td>' .
+                    '<form style="display: inline;" method="post" action="" > <input style="display: none;" type="text" name="id" value="' . $res['id'] . '">'
+                    . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
+                    '<form style="display: inline;" method="post" action="" > <input type="text" style="display: none;" name="id" value="' . $res['id'] . '">'
+                    . '<button type="submit" class="btn btn-danger" onclick="return confirm(\'Deseja mesmo excluir?\')">Excluir</button> </form>' .
+                    '</td>' .
+                    '</tr>');
 
-    $i++;
-}
-?>
+                    $i++;
+                }
+                ?>
 
             </tbody>
         </table>

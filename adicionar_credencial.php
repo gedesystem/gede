@@ -10,8 +10,8 @@
     <br>
     <br>
     <form method="post" action=".php">
-        <p>Nome do utilizador: <input type="text" class="form-control" name="nome_utilizador" placeholder=""></p>
-        <p>Código Credencial: <input type="text" class="form-control" name="credencial" placeholder=""></p>
+        <p>Nome do utilizador: <input type="text" class="form-control" name="nome_utilizador" placeholder="Nome do credenciado."></p>
+        <p>Código Credencial: <input type="text" class="form-control" name="credencial" placeholder="Digite um código de 10 caracteres."></p>
         <br>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
