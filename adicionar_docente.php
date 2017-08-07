@@ -3,8 +3,8 @@
 <section>
 
     <form method="post" action=".php">
-
-        <h2 class="Titulo">Informações básicas do docente</h2>
+        
+        <h2 class="Titulo">Informações básicas do docente</h2> 
 
         <HR NOSHADE SIZE="4">
 

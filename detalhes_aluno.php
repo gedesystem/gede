@@ -60,7 +60,7 @@ $res = mysql_fetch_assoc($resultado);
     <p>Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação: <span style="color: #737373"> <?php echo($res['deficiencia_transtorno_superdotacao']); ?> </span></p>
 
     <HR NOSHADE SIZE="4">
-    
+
     <?php
     include("info_aluno_mobilidade.php");
     ?>
@@ -86,9 +86,24 @@ $res = mysql_fetch_assoc($resultado);
             <button type="submit" class="btn btn-default" >Informações de Ingresso</button>
         </form>
 
-        <form style="display: inline;" method="post" action="adicionar_atividade_aluno.php">
+        <form style="display: inline;" method="post" action="adicionar_aluno_estagio.php">
             <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
-            <button type="submit" class="btn btn-default" >Atividade Extracurricular</button>
+            <button type="submit" class="btn btn-default" >Estágio</button>
+        </form>
+
+        <form style="display: inline;" method="post" action="adicionar_aluno_extensao.php">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
+            <button type="submit" class="btn btn-default" >Extensão</button>
+        </form>
+
+        <form style="display: inline;" method="post" action="adicionar_aluno_pesquisa.php">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
+            <button type="submit" class="btn btn-default" >Pesquisa</button>
+        </form>
+
+        <form style="display: inline;" method="post" action="adicionar_aluno_monitoria.php">
+            <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
+            <button type="submit" class="btn btn-default" >Monitoria</button>
         </form>
 
     </div>

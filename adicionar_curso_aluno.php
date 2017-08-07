@@ -2,7 +2,7 @@
 include("topo_pagina.php");
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 require_once('funcoes_uteis.php');
-$matricula_uefs = $_POST["matricula_uefs"];
+$id_gede = $_POST["id_gede"];
 ?>
 
 <section>
@@ -19,20 +19,21 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <p>Turno do Aluno no Curso</p>
         <div class="radio">
-            <label><input type="radio" name="nTurnoAluno" value="Matutino" checked/>Matutino</label>
-            <label><input type="radio" name="nTurnoAluno" value="Vespertino">Vespertino</label>
-            <label><input type="radio" name="nTurnoAluno" value="Noturno">Noturno</label>
-            <label><input type="radio" name="nTurnoAluno" value="Integral">Integral</label>
+            <label><input type="radio" name="nTurnoAluno" value="0" checked/>Matutino</label>
+            <label><input type="radio" name="nTurnoAluno" value="1">Vespertino</label>
+            <label><input type="radio" name="nTurnoAluno" value="2">Noturno</label>
+            <label><input type="radio" name="nTurnoAluno" value="3">Integral</label>
+            <label><input type="radio" name="nTurnoAluno" value="4">EAD</label>
         </div>
 
         <p>Situação do Vínculo do Aluno no Curso</p>
         <div class="radio">
-            <label><input type="radio" name="nSituacaoAluno" value="Cursando" checked/>Cursando</label>
-            <label><input type="radio" name="nSituacaoAluno" value="Trancada">Matrícula Trancada</label>
-            <label><input type="radio" name="nSituacaoAluno" value="Desvinculado">Desvinculado do Curso</label>
-            <label><input type="radio" name="nSituacaoAluno" value="Transferido">Transferido para Outro Curso da Mesma IES</label>
-            <label><input type="radio" name="nSituacaoAluno" value="Formado">Formado</label>
-            <label><input type="radio" name="nSituacaoAluno" value="Falecido">Falecido</label>
+            <label><input type="radio" name="nSituacaoAluno" value="2" checked/>Cursando</label>
+            <label><input type="radio" name="nSituacaoAluno" value="3">Matrícula Trancada</label>
+            <label><input type="radio" name="nSituacaoAluno" value="4">Desvinculado do Curso</label>
+            <label><input type="radio" name="nSituacaoAluno" value="5">Transferido para Outro Curso da Mesma IES</label>
+            <label><input type="radio" name="nSituacaoAluno" value="6">Formado</label>
+            <label><input type="radio" name="nSituacaoAluno" value="7">Falecido</label>
         </div>
 
         <p>Carga Horária Total: <input type="text" size="4" name="nCargaHorariaTotal" pattern="[0-9]+$" title="Carga Horária Total."></p>
@@ -41,14 +42,14 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <p>Semestre de Conclusão do Curso:</p>
         <div class="radio">
-            <label><input type="radio" name="nSemestreConclusao" value="Primeiro" checked/>Primeiro</label>
-            <label><input type="radio" name="nSemestreConclusao" value="Segundo">Segundo</label>
+            <label><input type="radio" name="nSemestreConclusao" value="1" checked/>Primeiro</label>
+            <label><input type="radio" name="nSemestreConclusao" value="2">Segundo</label>
         </div>
 
         <p>Aluno PARFOR?:</p>
         <div class="radio">
-            <label><input type="radio" name="nPARFOR" value="Sim" checked/>Sim</label>
-            <label><input type="radio" name="nPARFOR" value="Nao">Não</label>
+            <label><input type="radio" name="nPARFOR" value="1" checked/>Sim</label>
+            <label><input type="radio" name="nPARFOR" value="0">Não</label>
         </div>
 
         <div id="botoesAdicao">
@@ -59,7 +60,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
     </form>
     
     <form method="post" action="detalhes_aluno.php">
-        <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
+        <input style="display: none;" type="text" name="id_gede" value="<?php echo($id_gede); ?>">
         <button type="submit" class="btn btn-default"> Voltar </button>
     </form>
 
