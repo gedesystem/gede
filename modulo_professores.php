@@ -4,7 +4,7 @@
 
     <h2 class="Titulo">Docentes da Instituição</h2>
 
-    <form method="post" style="display: inline;" action="busca_professores.php">
+    <form method="post" style="display: inline;" action="docente_pesquisa.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar docente por...">
 
         <button type="submit" class="btn btn-default">
@@ -25,8 +25,8 @@
     <h2 class="Titulo">Ações</h2> 
 
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_docente.php'">Adicionar docente</button>
-        <button type="button" class="btn btn-default" onclick="location.href = 'listar_todos_professores.php'">Listar docentes</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'docente_adicionar_cadastro.php'">Adicionar docente</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'docente_listar_todos.php'">Listar docentes</button>
 
     </div>
 

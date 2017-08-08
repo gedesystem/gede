@@ -10,7 +10,7 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
     <h2 class="Titulo">Cursos da Instituição</h2>
 
-    <form method="post" style="display: inline;" action="busca_cursos.php">
+    <form method="post" style="display: inline;" action="curso_pesquisa.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar curso por...">
 
         <button type="submit" class="btn btn-default">
@@ -30,8 +30,8 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
     <h2 class="Titulo">Ações</h2> 
 
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_curso.php'">Adicionar cursos</button>
-        <button type="button" class="btn btn-default" onclick="location.href = 'listar_cursos.php'">Listar cursos</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'curso_adicionar_cadastro.php'">Adicionar cursos</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'curso_listar_todos.php'">Listar cursos</button>
     </div>
 
     <HR NOSHADE SIZE="6">

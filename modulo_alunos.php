@@ -4,7 +4,7 @@
 
     <h2 class="Titulo">Discentes da Instituição</h2>
 
-    <form method="post" style="display: inline;" action="busca_alunos.php">
+    <form method="post" style="display: inline;" action="aluno_pesquisa.php">
         <input style="display: inline;" size="100" type="text"  id="iBusca" name="nBusca" placeholder="&nbsp;Buscar discente por...">
 
         <button type="submit" class="btn btn-default">
@@ -25,7 +25,7 @@
     <h2 class="Titulo">Ações</h2> 
 
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_aluno'">Adicionar discente</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'aluno_adicionar_cadastro.php'">Adicionar discente</button>
 
     </div>
 
