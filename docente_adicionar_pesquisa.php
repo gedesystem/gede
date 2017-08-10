@@ -4,7 +4,7 @@
 
     <form method="post" action=".php">
 
-        <h2 class="Titulo">Título</h2> 
+        <h2 class="Titulo">Adicionar Informações de Pesquisa de Docente</h2> 
         (Nota da página)
 
         <HR NOSHADE SIZE="4">
@@ -14,10 +14,19 @@
         <p>Início: 
             <input type="text" class="form-control" id="iData" name="nData" required="required"
                    pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                   placeholder="Exemplo: 30/02/2016">
+                   placeholder="Data de início desta informação. Exemplo: 30/02/2016">
             <input type="radio" name="nDataHoje" onchange="setDataHoje()"> Usar data de hoje.
         </p>
-
+        
+        <p>Fim: 
+            <input type="text" class="form-control" id="iData" name="nData"
+                   pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                   placeholder="Data de fim desta informação. Exemplo: 30/02/2017">
+            <input type="radio" name="nDataHojeFim" onchange="setDataHoje()"> Usar data de hoje.
+        </p>
+        
+        <p>Título do Projeto:<input type="text" class="form-control" required="required" pattern="[A-Z\s]+$"  name="nTitulo" placeholder="Título do projeto de pesquisa."></p>
+        
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <div id="botoesAdicao">
