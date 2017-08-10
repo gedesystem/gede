@@ -35,27 +35,43 @@ $res = mysql_fetch_assoc($resultado);
 
     <HR NOSHADE SIZE="4">
 
-    <p>Código: </p>
+    <p>Código: <span style="color: #737373"> <?php echo($res['codigo_curso']); ?></span></p>
 
     <p>Nome: <span style="color: #737373"> <?php echo($res['nome']); ?></span> </p>
 
-    <p>Grau Acadêmico: </p>
+    <p>Grau Acadêmico: <span style="color: #737373"> <?php 
+    if($res['grau'] == 0) echo("Bacharelado"); 
+    if($res['grau'] == 1) echo("Tecnológico"); 
+    if($res['grau'] == 2) echo("Licenciatura"); ?></span></p>
 
-    <p>Modalidade: </p>
+    <p>Modalidade: <span style="color: #737373"> <?php 
+    if($res['modalidade'] == 0) echo("Presencial"); 
+    if($res['modalidade'] == 1) echo("À Distância"); ?></span></p>
 
-    <p>Nível Acadêmico: </p>
+    <p>Nível Acadêmico: <span style="color: #737373"> <?php 
+    if($res['nivel_academico'] == 0) echo("Graduação"); 
+    if($res['nivel_academico'] == 1) echo("Sequencial"); ?></span></p>
 
-    <p>Atributo de Ingresso: </p>
+    <p>Atributo de Ingresso: <span style="color: #737373"> <?php 
+    if($res['tipo_ingresso'] == 0) echo("Normal"); 
+    if($res['tipo_ingresso'] == 1) echo("Área Básica de Ingresso"); 
+    if($res['tipo_ingresso'] == 2) echo("Bacharelado Integrado"); 
+    if($res['tipo_ingresso'] == 3) echo("Licenciatura Integrado"); ?></span></p>
 
-    <p>Carga Horária: </p>
+    <p>Carga Horária: <span style="color: #737373"> <?php echo($res['carga_horaria']); ?></span></p>
 
-    <p>Data de Início do Funcionamento: </p>
+    <p>Data de Início do Funcionamento: <span style="color: #737373"> <?php echo($res['inicio_funcionamento']); ?></span></p>
 
-    <p>Data de Autorização: </p>
+    <p>Data de Autorização: <span style="color: #737373"> <?php echo($res['data_autorizacao']); ?></span></p>
 
-    <p>Situação do Curso no e-MEC: </p>
+    <p>Situação do Curso no e-MEC: <span style="color: #737373"> <?php 
+    if($res['situacao_emec'] == 0) echo("Em Atividade");
+    if($res['situacao_emec'] == 1) echo("Em Extinção");
+    if($res['situacao_emec'] == 2) echo("Extinto em 2015"); ?></span></p>
 
-    <p>Curso Gratuito?: </p>
+    <p>Curso Gratuito?: <span style="color: #737373"> <?php 
+    if($res['gratuito'] == 0) echo("Não");
+    if($res['gratuito'] == 1) echo("Sim"); ?></span></p>
 
     <br>
     <HR NOSHADE SIZE="4">

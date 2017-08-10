@@ -13,37 +13,38 @@ $id_gede = $_POST["id_gede"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Ano</p>
-        <input type="text" name="nTipoAno" class="form-control" placeholder="Ano referente aos dados preenchidos." checked/><br>
+        <p>Ano:</p>
+        <input type="text" name="nTipoAno" class="form-control" pattern="[0-9]+$" placeholder="Ano referente aos dados preenchidos." checked/><br>
 
-        <p>Curso teve aluno vinculado?</p>
+        <p>Curso teve aluno vinculado?:</p>
         <div class="radio">
-            <label><input type="radio" name="nAlunoVinculado" value="Sim" checked/>Sim</label>
-            <label><input type="radio" name="nAlunoVinculado" value="Nao">Não</label>
+            <label><input type="radio" name="nAlunoVinculado" value="1" checked/>Sim</label>
+            <label><input type="radio" name="nAlunoVinculado" value="0">Não</label>
         </div>
 
-        <p>Motivo do Curso sem aluno vinculado:</p>
+        <p>Motivo do curso sem aluno vinculado:</p>
         <div class="radio">
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="Extinto" checked/>Curso Extinto</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="Novo">Curso Novo</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="outroCodigo">Curso representado por outro código de curso</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="semDemanda">Curso ativo sem demanda</label>
+            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="1" checked/>Curso Extinto</label>
+            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="2">Curso Novo</label>
+            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="3">Curso representado por outro código de curso</label>
+            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="4">Curso ativo sem demanda</label>
         </div>
 
-        <p>Código do Curso Representado:<input type="text" class="form-control" required="required" name="nCodigoRepresentado" pattern="[0-9]+$" placeholder="Código do Curso Representado."></p>
+        <p>Código do curso representado:<input type="text" class="form-control" required="required" name="nCodigoRepresentado" pattern="[0-9]+$" placeholder="Código do Curso Representado."></p>
 
-        <p>Curso é financiado por Convênio?:</p>
+        <p>Curso é financiado por convênio?:</p>
         <div class="radio">
-            <label><input type="radio" name="nConvenio" value="Sim" checked/>Sim</label>
-            <label><input type="radio" name="nConvenio" value="Nao">Não</label>
+            <label><input type="radio" name="nConvenio" value="1" checked/>Sim</label>
+            <label><input type="radio" name="nConvenio" value="0">Não</label>
         </div>
 
-        <p>Turno do Curso:</p>
+        <p>Turno do curso:</p>
         <div class="radio">
-            <label><input type="radio" name="nTurno" value="Matutino" checked/>Matutino</label>
-            <label><input type="radio" name="nTurno" value="Vespertino">Vespertino</label>
-            <label><input type="radio" name="nTurno" value="Noturno">Noturno</label>
-            <label><input type="radio" name="nTurno" value="Integral">Integral</label>
+            <label><input type="radio" name="nTurno" value="0" checked/>Matutino</label>
+            <label><input type="radio" name="nTurno" value="1">Vespertino</label>
+            <label><input type="radio" name="nTurno" value="2">Noturno</label>
+            <label><input type="radio" name="nTurno" value="3">Integral</label>
+            <label><input type="radio" name="nTurno" value="4">EAD</label>
         </div>
 
         <p>Prazo Mínimo de Intregalização em Anos (por turno ou EAD): <input type="text" size="4" name="nPrazoMinimo" pattern="[0-9]+$" title="Prazo em anos."></p>
@@ -62,24 +63,24 @@ $id_gede = $_POST["id_gede"];
 
         <p>Curso garante condições de ensino-aprendizagem para pessoas com deficiência?:</p>
         <div class="radio">
-            <label><input type="radio" name="nCondicoesEnsino" value="Sim" checked/>Sim</label>
-            <label><input type="radio" name="nCondicoesEnsino" value="Nao">Não</label>
+            <label><input type="radio" name="nCondicoesEnsino" value="1" checked/>Sim</label>
+            <label><input type="radio" name="nCondicoesEnsino" value="0">Não</label>
         </div>
 
         <p>Recursos de Tecnologia Assistiva Disponíveis às Pessoas com Deficiência:</p>
         <div class="checkbox">
-            <label><input type="checkbox" name="nRecursosAssistivos" value="Braille">Material em Braille</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="Audio">Material em Áudio</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="InformaticaAcessivel">Recursos de Informática Acessível</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="TradutorSinais">Tradutor e Intérprete de Língua Brasileira de Sinais</label><br>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="GuiaInterprete">Guia-Intérprete</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="MaterialSinais">Material Didático em Língua Brasileira de Sinais</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="CaractereAmpliado">Material em Formato Impresso em Caractere Ampliado</label><br>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="Tatil">Material Pedagógico Tátil</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="DisciplinaSinais">Inserção da Disciplina de Língua Brasileira de Sinais no Curso</label><br>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="ImpressoAcessivel">Material Didático em Formato Impresso Acessível</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="AcessibilidadeComunicacao">Recursos de Acessibilidade à Comunicação</label>
-            <label><input type="checkbox" name="nRecursosAssistivos" value="DigitalAcessivel">Material Didático Digital Acessível</label>
+            <label><input type="checkbox" name="nBraille" value="1">Material em Braille</label>
+            <label><input type="checkbox" name="nAudio" value="1">Material em Áudio</label>
+            <label><input type="checkbox" name="nInformaticaAcessivel" value="1">Recursos de Informática Acessível</label>
+            <label><input type="checkbox" name="nTradutorLibras" value="1">Tradutor e Intérprete de Língua Brasileira de Sinais</label><br>
+            <label><input type="checkbox" name="nGuiaInterprete" value="1">Guia-Intérprete</label>
+            <label><input type="checkbox" name="nMaterialLibras" value="1">Material Didático em Língua Brasileira de Sinais</label>
+            <label><input type="checkbox" name="nCaractereAmpliado" value="1">Material em Formato Impresso em Caractere Ampliado</label><br>
+            <label><input type="checkbox" name="nTatil" value="1">Material Pedagógico Tátil</label>
+            <label><input type="checkbox" name="nDisciplinaLibras" value="1">Inserção da Disciplina de Língua Brasileira de Sinais no Curso</label><br>
+            <label><input type="checkbox" name="nMaterialImpressoAcessivel" value="1">Material Didático em Formato Impresso Acessível</label>
+            <label><input type="checkbox" name="nRecursosAcessibilidade" value="1">Recursos de Acessibilidade à Comunicação</label>
+            <label><input type="checkbox" name="nMaterialAcessivel" value="1">Material Didático Digital Acessível</label>
         </div>
 
         <br>

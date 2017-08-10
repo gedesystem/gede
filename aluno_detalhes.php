@@ -45,19 +45,33 @@ $res = mysql_fetch_assoc($resultado);
 
     <p>Data de Nascimento: <span style="color: #737373"> <?php echo($res['data_nascimento']); ?> </span></p>
 
-    <p>Sexo: <span style="color: #737373"> <?php echo($res['sexo']); ?> </span></p>
+    <p>Sexo: <span style="color: #737373"> <?php 
+    if($res['sexo'] == 0) echo("Masculino");
+    if($res['sexo'] == 1) echo("Feminino"); ?> </span></p>
 
-    <p>Cor/Raça: <span style="color: #737373"> <?php echo($res['cor_raca']); ?> </span></p>
+    <p>Cor/Raça: <span style="color: #737373"> <?php 
+    if($res['cor_raca'] == 0) echo("Não Declarada");
+    if($res['cor_raca'] == 1) echo("Branca");
+    if($res['cor_raca'] == 2) echo("Preta");
+    if($res['cor_raca'] == 3) echo("Parda");
+    if($res['cor_raca'] == 4) echo("Amarela");
+    if($res['cor_raca'] == 5) echo("Indígena");?> </span></p>
 
     <p>Nome da Mãe: <span style="color: #737373"> <?php echo($res['nome_mae']); ?> </span></p>
 
-    <p>Nacionalidade: <span style="color: #737373"> <?php echo($res['nacionalidade']); ?> </span></p>
+    <p>Nacionalidade: <span style="color: #737373"> <?php 
+    if($res['nacionalidade'] == 1) echo("Brasileira");
+    if($res['nacionalidade'] == 2) echo("Brasileira, nascido no exterior ou naturalizado");
+    if($res['nacionalidade'] == 3) echo("Estrangeira"); ?> </span></p>
 
     <p>Código do Município: <span style="color: #737373"> <?php echo($res['codigo_municipio']); ?> </span></p>
 
     <p>Código do Estado: <span style="color: #737373"> <?php echo($res['codigo_estado']); ?> </span></p>
 
-    <p>Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação: <span style="color: #737373"> <?php echo($res['deficiencia_transtorno_superdotacao']); ?> </span></p>
+    <p>Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação: <span style="color: #737373"> <?php
+    if($res['deficiencia_transtorno_superdotacao'] == 0) echo("Não");
+    if($res['deficiencia_transtorno_superdotacao'] == 1) echo("Sim");
+    if($res['deficiencia_transtorno_superdotacao'] == 2) echo("Não dispõe da informação"); ?> </span></p>
 
     <br>
     <HR NOSHADE SIZE="4">
