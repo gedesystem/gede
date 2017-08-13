@@ -33,7 +33,7 @@ class ImportCursosDadosCensitarios extends ImportStrategy
         $valores = ($valores . implode("', '", array_slice($linha, 4)));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `curso_dados_censitarios`(
+        $sql = ("INSERT INTO `cursos_dados_censitarios`(
             `codigo_curso`,`ano`, `curso_teve_aluno_vinculado`,
             `motivo_sem_aluno`,  `codigo_curso_representado`,
             `curso_financ_convenio`, `turno_curso`,
@@ -51,7 +51,7 @@ class ImportCursosDadosCensitarios extends ImportStrategy
             SELECT `codigo_curso`, '$valores', '$colaborador'
             FROM `cursos_dados_cadastrais`
             WHERE `codigo_curso`=" . $linha[0]);
-            
+
         if (mysql_query($sql)) {
             $linhasInseridas = mysql_affected_rows();
             if ($linhasInseridas == 0)
