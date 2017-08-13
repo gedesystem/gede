@@ -3,8 +3,8 @@
 <section>
 
     <form method="post" action=".php">
-        
-        <h2 class="Titulo">Informações básicas do docente</h2> 
+
+        <h2 class="Titulo">Informações básicas do docente</h2>
 
         <HR NOSHADE SIZE="4">
 
@@ -26,7 +26,7 @@
 
         <p>Nome Completo da Mãe:<input type="text" class="form-control" pattern="[A-Z\s]+$" id="iNomeMae" name="nNomeMae" placeholder="Nome da mãe do docente. Utilize letras MAIÚSCULAS."></p>
 
-        <p>Cor/Raça do Aluno:</p>
+        <p>Cor/Raça do Docente:</p>
         <div class="radio">
             <label><input type="radio" id="iBranca" name="nCor" value="1"> Branca</label>
             <label><input type="radio" id="iPreta" name="nCor" value="2"> Preta</label>
@@ -38,39 +38,47 @@
 
         <p>Nacionalidade:</p>
         <div class="radio">
-            <label><input type="radio" id="iBrasileira" name="nNacionalidade" value="1" checked/> Brasileira</label>
-            <label><input type="radio" id="iNaturalizado" name="nNacionalidade" value="2"> Brasileira - nascido no exterior ou naturalizado</label>
-            <label><input type="radio" id="iEstrangeiro" name="nNacionalidade" value="3"> Estrangeira</label>
+            <label><input type="radio" id="iBrasileira" name="nNacionalidade" value="1" checked onclick="selecionarNacionalidade(this.value)"/> Brasileira</label>
+            <label><input type="radio" id="iNaturalizado" name="nNacionalidade" value="2" onclick="selecionarNacionalidade(this.value)"> Brasileira - nascido no exterior ou naturalizado</label>
+            <label><input type="radio" id="iEstrangeiro" name="nNacionalidade" value="3" onclick="selecionarNacionalidade(this.value)"> Estrangeira</label>
         </div>
 
-        <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="País de nascimento. Utilize letras MAIÚSCULAS."></p>
+        <!-- Informações do Docente estrangeiro -->
+        <div id="iInfoEstrangeiro" style="display:none" >
+            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="País de nascimento. Utilize letras MAIÚSCULAS."></p>
+        </div>
 
-        <p>UF de Nascimento: <input type="text" size="2" id="iUf" name="nUf" pattern="[A-Z\s]+$" min="2" max="2" title="Sigla do estado de nascimento. Apenas duas letas MAIÚSCULAS.. Ex: BA."></p>
+        <!-- Informações do docente brasileiro -->
+        <div id="iInfoBrasileiro">
+            <p>UF de Nascimento: <input type="text" size="2" id="iUf" name="nUf" pattern="[A-Z\s]+$" min="2" max="2" title="Sigla do estado de nascimento. Apenas duas letas MAIÚSCULAS.. Ex: BA."></p>
 
-        <p>Município de Nascimento:<input type="text" class="form-control" pattern="[A-Z\s]+$" id="iMunicipio" name="nMunicipio" placeholder="Cidade natal do docente. Utilize letras MAIÚSCULAS."></p>
+            <p>Município de Nascimento:<input type="text" class="form-control" pattern="[A-Z\s]+$" id="iMunicipio" name="nMunicipio" placeholder="Cidade natal do docente. Utilize letras MAIÚSCULAS."></p>
 
-        <p>Código do município: <input type="text" class="form-control" name="nCodigoMuni" placeholder="Código do município de nascimento do docente."> <p>
+            <p>Código do município: <input type="text" class="form-control" name="nCodigoMuni" placeholder="Código do município de nascimento do docente."> <p>
 
-        <p>Código do estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código do município de nascimento do docente."> <p>
+            <p>Código do estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código do município de nascimento do docente."> <p>
+        </div>
 
         <p>Docente com Deficiência:</p>
 
         <div class="radio">
-            <label><input type="radio" name="nDeficienciaHabilidades" value="1">Sim</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="0" checked/>Não</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="2">Não dispõe dessa informação</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="1" onclick="selecionarTemDeficiencia(this.value)">Sim</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="0" checked onclick="selecionarTemDeficiencia(this.value)"/>Não</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="2" onclick="selecionarTemDeficiencia(this.value)">Não dispõe dessa informação</label>
         </div>
 
-        <p>Tipo de Deficiência:</p>
+        <div id="iDeficiencia" style="display:none">
+            <p>Tipo de Deficiência:</p>
 
-        <input type="checkbox" name="nCegueira" value="1"> Cegueira
-        <input type="checkbox" name="nBaixaVisao" value="1"> Baixa visão
-        <input type="checkbox" name="nSurdez" value="1"> Surdez
-        <input type="checkbox" name="nAuditiva" value="1"> Deficiência auditiva<br>
-        <input type="checkbox" name="nFisica" value="1"> Deficiência física
-        <input type="checkbox" name="nSurdocegueira" value="1"> Surdocegueira
-        <input type="checkbox" name="nMultipla" value="1"> Deficiência múltipla
-        <input type="checkbox" name="nIntelectual" value="1"> Deficiência intelectual<br>
+            <input type="checkbox" name="nCegueira" value="1"> Cegueira
+            <input type="checkbox" name="nBaixaVisao" value="1"> Baixa visão
+            <input type="checkbox" name="nSurdez" value="1"> Surdez
+            <input type="checkbox" name="nAuditiva" value="1"> Deficiência auditiva<br>
+            <input type="checkbox" name="nFisica" value="1"> Deficiência física
+            <input type="checkbox" name="nSurdocegueira" value="1"> Surdocegueira
+            <input type="checkbox" name="nMultipla" value="1"> Deficiência múltipla
+            <input type="checkbox" name="nIntelectual" value="1"> Deficiência intelectual<br>
+        </div>
 
 
         <HR NOSHADE SIZE="4">
@@ -81,5 +89,7 @@
     <button type="button" class="btn btn-warning" onclick="location.href = 'modulo_professores.php'">Cancelar</button>
 
 </section>
+
+<script src="js/docente_adicionar_cadastro_form.js"></script>
 
 <?php include("fim_pagina.php"); ?>
