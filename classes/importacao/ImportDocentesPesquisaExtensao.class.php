@@ -22,7 +22,7 @@ class ImportDocentesPesquisaExtensao extends ImportStrategy
 
     protected function salvar(array $linha)
     {
-        $tabela = ($this->tipo == 0) ? "docente_extensao" : "docente_pesquisa";
+        $tabela = ($this->tipo == 0) ? "docentes_extensao" : "docentes_pesquisa";
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
