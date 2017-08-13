@@ -18,7 +18,7 @@ class ImportAlunosEstagio extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `aluno_estagio`(
+        $sql = ("INSERT INTO `alunos_estagio`(
             `matricula_uefs`, `local_trabalho`, `inicio`, `fim`,
             `observacao`, `fonte`, `colaborador`)
             SELECT `matricula_uefs`, '$valores', '$colaborador'

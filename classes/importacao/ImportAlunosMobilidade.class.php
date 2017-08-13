@@ -29,7 +29,7 @@ class ImportAlunosMobilidade extends ImportStrategy
         $valores = ($valores . implode("', '", array_slice($linha, 5)));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `aluno_mobilidade`(
+        $sql = ("INSERT INTO `alunos_mobilidade`(
             `matricula_uefs`, `tipo`, `ies_destino`,
             `tipo_mobilidade_internacional`, `pais_destino`,
             `inicio`, `fim`, `observacao`, `fonte`, `colaborador`)

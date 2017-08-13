@@ -18,7 +18,7 @@ class ImportAlunosMonitoria extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `aluno_monitoria`(
+        $sql = ("INSERT INTO `alunos_monitoria`(
             `matricula_uefs`, `remuneracao`,
             `inicio`, `fim`, `observacao`,
             `fonte`, `colaborador`)

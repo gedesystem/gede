@@ -18,7 +18,7 @@ class ImportAlunosPesquisa extends ImportStrategy
         $valores = implode("', '", array_slice($linha, 1));
         $colaborador = $_SESSION['nome'];
 
-        $sql = ("INSERT INTO `aluno_pesquisa`(
+        $sql = ("INSERT INTO `alunos_pesquisa`(
             `matricula_uefs`, `remuneracao`, `orientador`,
             `titulo_plano_trabalho`, `titulo_projeto`,
             `modalidade`, `inicio`, `fim`, `observacao`,
