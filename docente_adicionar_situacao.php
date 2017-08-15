@@ -11,12 +11,13 @@ $matricula_uefs = $_POST["matricula_uefs"];
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
         <h2 class="Titulo">Situação do Docente na IES</h2>
+        Essa sessão refere-se à situação do docente na IES.
 
         <HR NOSHADE SIZE="4">
 
         <p>Situação:</p>
         <div class="radio">
-            <label><input type="radio" name="nSituacao" value=1>Esteve em exercício</label><br>
+            <label><input type="radio" name="nSituacao" value=1>Em exercício</label><br>
             <label><input type="radio" name="nSituacao" value=2>Afastado para qualificação</label><br>
             <label><input type="radio" name="nSituacao" value=3>Afastado para exercício em outros órgãos/entidades</label><br>
             <label><input type="radio" name="nSituacao" value=4>Afastado por outros motivos</label><br>
@@ -25,16 +26,25 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Data:</p>
+        <p>Inicio:
         <input type="text" class="form-control" id="iData" name="nData" required="required"
             pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-            placeholder="Ex: 31/12/1990.">
-        Usar data de hoje: <input type="radio" name="nDataHoje" onchange="setDataHoje()">
+            placeholder="Data de início da situação, separada por barras. Ex: 31/12/1990.">
+        </p>
+        <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iData')"> Usar data de hoje</button>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:</p>
-        <textarea id="iObs" name="nObs" rows="8" cols="80" class="form-control"></textarea>
+        <p>Término:
+        <input type="text" class="form-control" id="iDataFim" name="nDataFim" required="required"
+            pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+            placeholder="Data do término da situação, separada por barras. Ex: 31/12/1990.">
+        </p>
+        <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iDataFim')"> Usar data de hoje</button>
+
+        <HR NOSHADE SIZE="4">
+
+        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <HR NOSHADE SIZE="4">
 

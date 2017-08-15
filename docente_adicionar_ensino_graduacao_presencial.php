@@ -17,9 +17,11 @@ $matricula_uefs = $_POST["matricula_uefs"];
         <input type="text" class="form-control" id="iData" name="nData" required="required"
                pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                placeholder="Data de início do curso de graduação presencial, separada por barras. Ex: 01/05/2015.">
-        <input type="radio" name="nDataHoje" onchange="setDataHoje()"> Usar data de hoje.
         </p>
-        
+        <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iData')"> Usar data de hoje</button>
+
+        <HR NOSHADE SIZE="4">
+
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <div id="botoesAdicao">

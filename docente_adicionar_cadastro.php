@@ -45,18 +45,14 @@
 
         <!-- Informações do Docente estrangeiro -->
         <div id="iInfoEstrangeiro" style="display:none" >
-            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="País de nascimento. Utilize letras MAIÚSCULAS."></p>
+            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do Docente."></p>
         </div>
 
         <!-- Informações do docente brasileiro -->
         <div id="iInfoBrasileiro">
-            <p>UF de Nascimento: <input type="text" size="2" id="iUf" name="nUf" pattern="[A-Z\s]+$" min="2" max="2" title="Sigla do estado de nascimento. Apenas duas letas MAIÚSCULAS.. Ex: BA."></p>
-
-            <p>Município de Nascimento:<input type="text" class="form-control" pattern="[A-Z\s]+$" id="iMunicipio" name="nMunicipio" placeholder="Cidade natal do docente. Utilize letras MAIÚSCULAS."></p>
-
             <p>Código do município: <input type="text" class="form-control" name="nCodigoMuni" placeholder="Código do município de nascimento do docente."> <p>
 
-            <p>Código do estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código do município de nascimento do docente."> <p>
+            <p>Código do estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código da UF de origem do docente."> <p>
         </div>
 
         <p>Docente com Deficiência:</p>

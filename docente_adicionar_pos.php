@@ -16,19 +16,20 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <p>Pós-Graduação:</p>
         <div class="radio">
-            <label><input type="radio" name="nPosGraduacaoDocente" value=0 checked/>Especialização</label>
-            <label><input type="radio" name="nPosGraduacaoDocente" value=1>Mestrado</label>
-            <label><input type="radio" name="nPosGraduacaoDocente" value=2>Doutorado</label>
-            <label><input type="radio" name="nPosGraduacaoDocente" value=3>Não Possui</label>
+            <label><input type="radio" name="nPosGraduacaoDocente" value=1 checked/>Especialização</label>
+            <label><input type="radio" name="nPosGraduacaoDocente" value=2>Mestrado</label>
+            <label><input type="radio" name="nPosGraduacaoDocente" value=3>Doutorado</label>
+            <label><input type="radio" name="nPosGraduacaoDocente" value=0>Não Possui</label>
         </div>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Data da Titulação:</p>
+        <p>Data da Titulação:
         <input type="text" class="form-control" id="iData" name="nData" required="required"
             pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
             placeholder="Data da titulação do docente. Ex: 31/12/1990.">
-        Usar data de hoje: <input type="radio" name="nDataHoje" onchange="setDataHoje()">
+        </p>
+        <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iData')"> Usar data de hoje</button>
 
         <HR NOSHADE SIZE="4">
 

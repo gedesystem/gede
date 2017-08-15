@@ -52,7 +52,7 @@ $res = mysql_fetch_assoc($resultado);
 
     <p>Nome Completo da Mãe: <span style="color: #737373"> <?php echo($res['nome_mae']); ?></span> </p>
 
-    <p>Cor/Raça do Aluno: <span style="color: #737373"> <?php
+    <p>Cor/Raça do Docente: <span style="color: #737373"> <?php
             switch ($res['cor_raca']) {
                 case 0: echo "Não Declarada";
                     break;
@@ -96,7 +96,7 @@ $res = mysql_fetch_assoc($resultado);
     <h2 class="Titulo">Adicionar Informações</h2>
 
     <p>Cadastrais</p>
-    
+
     <div id="botoesAddInformacoes">
 
         <form style="display: inline;" method="post" action="docente_adicionar_situacao.php">
@@ -117,9 +117,9 @@ $res = mysql_fetch_assoc($resultado);
         <form style="display: inline;" method="post" action="docente_adicionar_pos.php">
             <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Pós-graduação</button>
-        </form> 
+        </form>
 
-        <form style="display: inline;" method="post" action="">
+        <form style="display: inline;" method="post" action="docente_adicionar_temporario.php">
             <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" >Vinculo temporario</button>
         </form>
@@ -128,7 +128,7 @@ $res = mysql_fetch_assoc($resultado);
 
     <HR NOSHADE SIZE="4">
     <p>Ensino</p>
-    
+
 
     <div id="botoesAddInformacoes">
         <form style="display: inline;" method="post" action="docente_adicionar_vinculo_curso.php">
@@ -160,7 +160,7 @@ $res = mysql_fetch_assoc($resultado);
 
     <HR NOSHADE SIZE="4">
     <p>Atividade extracurricular</p>
-    
+
 
     <div id="botoesAddInformacoes">
 
