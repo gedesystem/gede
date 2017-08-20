@@ -24,7 +24,7 @@
 
         <p>IES de Destino - Mobilidade Nacional:<input type="text" class="form-control" name="nIESDestino" pattern="[0-9]+$" placeholder="Código da IES de destino para mobilidade nacional."></p>
 
-        <p>País de Destino - Mobilidade Internacional:<input type="text" class="form-control" name="nOrientador" pattern="[A-Z\s]+$" placeholder="País de destino para mobilidade internacional."></p>
+        <p>País de Destino - Mobilidade Internacional:<input type="text" class="form-control" name="nPaisDestino" pattern="[A-Z\s]+$" placeholder="País de destino para mobilidade internacional."></p>
 
         <p>Início: <input type="text" class="form-control" required="required" name="nInicio" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" placeholder="Data de início da mobilidade, separada por barras. Ex: 01/05/2015."></p>
 

@@ -10,7 +10,7 @@
 
         <p>Código do Curso:<input type="text" class="form-control" required="required" name="nCodigo" pattern="[0-9]+$" placeholder="Código do Curso."></p>
 
-        <p>Nome do Curso:<input type="text" class="form-control" name="nNome" pattern="[A-Z\s]+$" placeholder="Nome do Curso. Utilize letras MAIÚSCULAS."></p>
+        <p>Nome do Curso:<input type="text" class="form-control" name="nNome" required="required" pattern="[A-Z\s]+$" placeholder="Nome do Curso. Utilize letras MAIÚSCULAS."></p>
 
         <p>Código OCDE:<input type="text" class="form-control" required="required" pattern="[0-9]+$" name="nOCDE" placeholder="Código OCDE."></p>
 

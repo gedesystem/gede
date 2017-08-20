@@ -9,7 +9,7 @@ $Id = $_POST["id"];
 //$exemplo = isset($_POST["exemplo"]);
 
 $codigo_laboratorio = isset($_POST["nCodigo"]);
-$observacoes = isset($_POST["nObservacao"]);
+$observacoes = isset($_POST["nObservacao"]) ? $_POST["nObservacao"] : "";
 
 conexao();
 
