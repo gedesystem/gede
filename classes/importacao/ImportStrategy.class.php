@@ -124,7 +124,16 @@ abstract class ImportStrategy
 
 }
 
-class ImportException extends Exception {}
+class ImportException extends Exception {
+    function __construct($linha, $mensagem="")
+    {
+        parent::__construct(
+            "Linha "
+            . $linha
+            . ": " . $mensagem
+        );
+    }
+}
 
 class SaveException extends Exception {
     function __construct($linha, $mensagem="")

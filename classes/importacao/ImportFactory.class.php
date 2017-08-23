@@ -19,6 +19,7 @@ require_once 'classes/importacao/ImportAlunosPesquisa.class.php';
 require_once 'classes/importacao/ImportCursosDadosCensitarios.class.php';
 require_once 'classes/importacao/ImportCursosDadosCadastrais.class.php';
 require_once 'classes/importacao/ImportCursosLaboratorios.class.php';
+require_once 'classes/importacao/ImportAlunosDadosCursos.class.php';
 
 /**
  *
@@ -76,6 +77,8 @@ class ImportFactory
         case 21: return new ImportDocentesVinculoDocentes($arquivo); break;
 
         case 22: return new ImportDocentesVinculoIes($arquivo); break;
+
+        case 23: return new ImportAlunosDadosCursos($arquivo); break;
 
         default:
             echo '<h3 color: #6d7679>Não suportado! Redirecionando em 3 segundos...</h3>';
