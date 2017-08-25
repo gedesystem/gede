@@ -18,7 +18,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
         <p>Início:
             <input type="text" class="form-control" id="iData" name="nData" required="required"
                    pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                   placeholder="Data de início da atuação do docente substituto na instituição. Exemplo: 30/02/2016">
+                   placeholder="Data de início da atuação do docente temporário na instituição. Exemplo: 30/02/2016">
         </p>
         <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iData')"> Usar data de hoje</button>
 
@@ -27,29 +27,33 @@ $matricula_uefs = $_POST["matricula_uefs"];
         <p>Fim:
             <input type="text" class="form-control" id="iDataFim" name="nDataFim" required="required"
                    pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                   placeholder="Data do fim da atuação do docente substituto na instituição. Exemplo: 30/02/2016">
+                   placeholder="Data do fim da atuação do docente temporário na instituição. Exemplo: 30/02/2016">
         </p>
         <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iDataFim')"> Usar data de hoje</button>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Docente visitante?:</p>
+        <p>Tipo do Docente Temporário:</p>
         <div class="radio">
-            <label><input type="radio" name="nVisitante" value="0" checked onclick="selecionarTipoVinculo(this.value)"/>Não</label>
-            <label><input type="radio" name="nVisitante" value="1" onclick="selecionarTipoVinculo(this.value)">Sim</label>
+            <label><input type="radio" name="nVisitante" value="0" checked onclick="selecionarTipoVinculo(this.value)"/>Substituto</label>
+            <label><input type="radio" name="nVisitante" value="1" onclick="selecionarTipoVinculo(this.value)">Visitante</label>
         </div>
 
         <HR NOSHADE SIZE="4">
 
         <!-- Só aparece se o docente for visitante -->
         <div id="iTipo" style="display:none">
-            <p>Tipo:</p>
+            <p>Tipo do Vínculo:</p>
             <div class="radio">
                 <label><input type="radio" name="nTipo" value="1" checked/>Em folha</label>
                 <label><input type="radio" name="nTipo" value="2">Bolsista</label>
             </div>
             <HR NOSHADE SIZE="4">
         </div>
+
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
+        <HR NOSHADE SIZE="4">
 
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 

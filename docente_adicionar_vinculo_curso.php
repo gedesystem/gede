@@ -18,6 +18,8 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <p>Código do Curso:<input type="text" class="form-control" required="required" name="nCodigo" pattern="[0-9]+$" placeholder="Código do curso ao qual o docente terá vínculo."></p>
 
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <div id="botoesAdicao">

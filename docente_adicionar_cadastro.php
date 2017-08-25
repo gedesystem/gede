@@ -76,6 +76,9 @@
             <input type="checkbox" name="nIntelectual" value="1"> Deficiência intelectual<br>
         </div>
 
+        <HR NOSHADE SIZE="4">
+
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <HR NOSHADE SIZE="4">
 
