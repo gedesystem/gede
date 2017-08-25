@@ -156,9 +156,9 @@ class ExportadorSimples
 		    date_format(`termino`, '%d/%m/%Y'), `fonte`
 		    FROM `docentes_situacoes_docentes`",
 
-            "SELECT `matricula_uefs`, `tipo`,
-		    date_format(`inicio`, '%d/%m/%Y'), date_format(`fim`, '%d/%m/%Y'), `tipo_vinculo`,
-		    `observacoes`, `fonte`
+            "SELECT `matricula_uefs`, date_format(`inicio`, '%d/%m/%Y'),
+            date_format(`fim`, '%d/%m/%Y'), `tipo_docente_temporario`,
+            `tipo_vinculo`, `observacoes`, `fonte`
 		    FROM `docentes_temporarios`",
 
             "SELECT `matricula_uefs`, `codigo_curso`, `fonte`

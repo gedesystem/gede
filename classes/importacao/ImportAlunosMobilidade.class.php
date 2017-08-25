@@ -17,12 +17,17 @@ class ImportAlunosMobilidade extends ImportStrategy
         $tipo = ('' . $linha[1]);
         $valores = $tipo;
 
-        if ($tipo == '0') {
+        // se o tipo da mobilidade for nacional
+        if ($tipo == '1') {
             $iesDestino = $linha[2];
+            // seta os campos relativo à mobilidade internacional para null
             $valores = ($valores . "', '$iesDestino', null, null, '");
-        } elseif ($tipo == '1') {
+
+        // se o tipo da mobilidade for internacional
+        } elseif ($tipo == '2') {
             $tipoInternacional = $linha[3];
             $paisDestino = $linha[4];
+            // seta os campos relativo à mobilidade nacional para null
             $valores = ($valores . "', null, '$tipoInternacional', '$paisDestino', '");
         }
 

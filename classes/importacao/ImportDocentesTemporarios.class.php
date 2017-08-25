@@ -8,7 +8,7 @@ class ImportDocentesTemporarios extends ImportStrategy
 {
     protected function validarLinha(array $linha)
     {
-        $linha = $this->formatarData($linha, 2, 3);
+        $linha = $this->formatarData($linha, 1, 2);
 
         return $linha;
     }
@@ -19,7 +19,8 @@ class ImportDocentesTemporarios extends ImportStrategy
         $colaborador = $_SESSION['nome'];
 
         $sql = ("INSERT INTO `docentes_temporarios`(
-            `matricula_uefs`, `tipo`, `inicio`, `fim`, `tipo_vinculo`,
+            `matricula_uefs`, `inicio`, `fim`,
+            `tipo_docente_temporario`, `tipo_vinculo`,
             `observacoes`, `fonte`, `colaborador`)
             SELECT `matricula_uefs`, '$valores', '$colaborador'
             FROM `docentes_dados_cadastrais`
