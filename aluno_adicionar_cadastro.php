@@ -3,14 +3,16 @@
 <section>
 
     <form method="post" action=".php">
-        
-        <h2 class="Titulo">Informações básicas do Aluno</h2> 
+
+        <h2 class="Titulo">Informações básicas do Aluno</h2>
 
         <HR NOSHADE SIZE="4">
 
         <p>Matrícula:<input type="text" class="form-control" required="required" name="nMatricula" pattern="[0-9]+$" placeholder="Número de matrícula na IES."></p>
 
         <p>ID do Aluno:<input type="text" class="form-control" name="nIdAluno" pattern="[0-9]+$" placeholder="Número fornecido pelo INEP."></p>
+
+        <p>Código IES:<input type="text" class="form-control" name="nIdIES" placeholder="Código do Aluno na IES."></p>
 
         <p>CPF do Aluno:<input type="text" class="form-control" required="required" pattern="[0-9]+$" name="nCpf" placeholder="Utilize apenas números."></p>
 
@@ -38,29 +40,32 @@
 
         <p>Nacionalidade:</p>
         <div class="radio">
-            <label><input type="radio" name="nNacionalidade" value="1" checked/> Brasileira</label>
-            <label><input type="radio" name="nNacionalidade" value="2"> Brasileira - nascido no exterior ou naturalizado</label>
-            <label><input type="radio" name="nNacionalidade" value="3"> Estrangeira</label>
+            <label><input type="radio" id="iBrasileira" name="nNacionalidade" value="1" checked onclick="selecionarNacionalidade(this.value)"/> Brasileira</label>
+            <label><input type="radio" id="iNaturalizado" name="nNacionalidade" value="2" onclick="selecionarNacionalidade(this.value)"> Brasileira - nascido no exterior ou naturalizado</label>
+            <label><input type="radio" id="iEstrangeiro" name="nNacionalidade" value="3" onclick="selecionarNacionalidade(this.value)"> Estrangeira</label>
         </div>
 
-        <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" name="nPaisOrigem" placeholder="País de nascimento. Utilize letras MAIÚSCULAS."></p>
+        <!-- Informações do aluno estrangeiro -->
+        <div id="iInfoEstrangeiro" style="display:none" >
+            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do aluno. Utilize letras MAIÚSCULAS."></p>
+        </div>
 
-        <p>UF de Nascimento: <input type="text" size="2" name="nUf" pattern="[A-Z\s]+$" min="2" max="2" title="Sigla do estado de nascimento. Apenas duas letas MAIÚSCULAS.. Ex: BA."></p>
+        <!-- Informações do aluno brasileiro -->
+        <div id="iInfoBrasileiro">
+            <p>Código do município: <input type="text" class="form-control" name="nCodigoMuni" placeholder="Código do município de nascimento do aluno."> <p>
 
-        <p>Município de Nascimento:<input type="text" class="form-control" pattern="[A-Z\s]+$" name="nMunicipio" placeholder="Cidade natal do Aluno. Utilize letras MAIÚSCULAS."></p>
-
-        <p>Código do Município: <input type="text" class="form-control" name="nCodigoMuni" placeholder="Código do município de nascimento do Aluno."> <p>
-
-        <p>Código do Estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código do estado de nascimento do Aluno."> <p>
+            <p>Código do estado: <input type="text" class="form-control" name="nCodigoEstado" placeholder="Código da UF de origem do aluno."> <p>
+        </div>
 
         <p>Aluno com Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
 
         <div class="radio">
-            <label><input type="radio" name="nDeficienciaHabilidades" value="1">Sim</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="0" checked/>Não</label>
-            <label><input type="radio" name="nDeficienciaHabilidades" value="2">Não dispõe dessa informação</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="1" onclick="selecionarTemDeficiencia(this.value)">Sim</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="0" checked onclick="selecionarTemDeficiencia(this.value)"/>Não</label>
+            <label><input type="radio" name="nDeficienciaHabilidades" value="2" onclick="selecionarTemDeficiencia(this.value)">Não dispõe dessa informação</label>
         </div>
 
+        <div id="iDeficiencia" style="display:none">
         <p>Tipo de Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
 
         <input type="checkbox" name="nCegueira" value="1"> Cegueira
@@ -76,15 +81,22 @@
         <input type="checkbox" name="nRett" value="1"> Síndrome de Rett
         <input type="checkbox" name="nTDI" value="1"> Transtorno desintegrativo de infância
         <input type="checkbox" name="nAltasHabilidades" value="1"> Altas Habilidades/Superdotação
+        </div>
 
+        <HR NOSHADE SIZE="4">
+
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <HR NOSHADE SIZE="4">
 
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar</button>
+        </div>
     </form>
     <button type="button" class="btn btn-warning" onclick="location.href = 'modulo_alunos.php'">Cancelar</button>
 
 </section>
+
+<script src="js/adicionar_cadastro_form.js"></script>
 
 <?php include("fim_pagina.php"); ?>
