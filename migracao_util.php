@@ -23,7 +23,8 @@ const MODELOS = array (
     'docentes_situacoes_docentes',
     'docentes_temporarios',
     'docentes_vinculo_docentes',
-    'docentes_vinculo_ies'
+    'docentes_vinculo_ies',
+    'aluno_dados_cursos'
 );
 
 const TEMP_DIR = 'temp/';

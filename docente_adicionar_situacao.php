@@ -44,6 +44,10 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
+        <HR NOSHADE SIZE="4">
+
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <HR NOSHADE SIZE="4">

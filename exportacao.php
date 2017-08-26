@@ -31,6 +31,7 @@ foreach ($files as $file){
         <OPTION value = 3> Alunos - Monitoria
         <OPTION value = 4> Alunos - Pesquisa
         <OPTION value = 5> Alunos - Dados cadastrais
+        <OPTION value = 23> Alunos - Dados de Cursos
         <OPTION value = 6> Cursos - Dados Censitários
         <OPTION value = 7> Cursos - Dados Cadastrais
         <OPTION value = 8> Cursos - Laboratórios

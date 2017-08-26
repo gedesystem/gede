@@ -21,7 +21,7 @@ $res = mysql_fetch_assoc($resultado);
     <h2 class="Titulo">Informações do docente</h2>
 
     <div id="botoesEdicao">
-        <form style="display: inline;" method="post" action="bd_docente_editar_cadastro.php">
+        <form style="display: inline;" method="post" action="docente_editar_cadastro.php">
             <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" onclick="return confirm('Deseja editar?')">Editar</button>
         </form>
@@ -80,15 +80,41 @@ $res = mysql_fetch_assoc($resultado);
             }
             ?></span> </p>
 
-    <p>País de Origem:  <span style="color: #737373"> <?php echo($res['codigo_pais_origem']); ?></span> </p>
+    <?php
+        if ($res['nacionalidade'] != 1) {
+            $codPaisOrigem = $res['codigo_pais_origem'];
+            $paisOrigem = mysql_fetch_assoc(
+                seleciona("SELECT `nome` FROM `gede_paises` WHERE `codigo`=$codPaisOrigem"))['nome'];
+            $paisOrigem = empty($paisOrigem) ? $codPaisOrigem : $paisOrigem;
+            echo ("<p>País de Origem:  <span style=\"color: #737373\"> $paisOrigem </span> </p>");
+        }
+    ?>
 
-    <p>UF de Nascimento: <span style="color: #737373"> <?php echo($res['uf_nascimento']); ?></span> </p>
+    <?php
+        if ($res['nacionalidade'] == 1) {
+            $coduf = $res['codigo_uf'];
+            $uf = mysql_fetch_assoc(
+                seleciona("SELECT `nome` FROM `gede_estados` WHERE `codigo`=$coduf"))['nome'];
+            $uf = empty($uf) ? $coduf : $uf;
+            echo("<p>UF de Origem: <span style=\"color: #737373\"> $uf </span> </p>");
 
-    <p>Município de Nascimento: <span style="color: #737373"> <?php echo($res['codigo_municipio']); ?></span> </p>
+            $codmunicipio = $res['codigo_municipio'];
+            $municipio = mysql_fetch_assoc(
+                seleciona("SELECT `nome` FROM `gede_municipios` WHERE `codigo`=$codmunicipio"))['nome'];
+            $municipio = empty($municipio) ? $codmunicipio : $municipio;
+            echo("<p>Município de Nascimento: <span style=\"color: #737373\"> $municipio </span> </p>");
+        }
+    ?>
 
-    <p>Docente com Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
+    <p>Docente com Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação?:
+        <span style="color: #737373"> <?php echo(($res['deficiencia'] == 0) ? "Não" : "Sim"); ?> </span> </p>
 
-    <p>Tipo de Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:</p>
+    <?php
+        if ($res['deficiencia'] == 1) {
+            echo("<p>Tipo de Deficiência, Transtorno Global do Desenvolvimento ou Altas Habilidades/Superdotação:
+            <span style=\"color: #737373\"> </span> </p>");
+        }
+    ?>
 
     <br>
 

@@ -19,7 +19,6 @@ $matricula_uefs = $_POST["matricula_uefs"];
             <label><input type="radio" name="nPosGraduacaoDocente" value=1 checked/>Especialização</label>
             <label><input type="radio" name="nPosGraduacaoDocente" value=2>Mestrado</label>
             <label><input type="radio" name="nPosGraduacaoDocente" value=3>Doutorado</label>
-            <label><input type="radio" name="nPosGraduacaoDocente" value=0>Não Possui</label>
         </div>
 
         <HR NOSHADE SIZE="4">
@@ -33,8 +32,11 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:</p>
-        <textarea id="iObs" name="nObs" rows="3" cols="80" class="form-control"></textarea>
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
+        <HR NOSHADE SIZE="4">
+
+        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <HR NOSHADE SIZE="4">
 

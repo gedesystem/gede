@@ -28,6 +28,10 @@ $matricula_uefs = $_POST["matricula_uefs"];
         </p>
         <button type="button" class="btn btn-default" name="nDataHoje" onclick="setDataHoje('iData')"> Usar data de hoje</button>
 
+        <HR NOSHADE SIZE="4">
+
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>
         </div>

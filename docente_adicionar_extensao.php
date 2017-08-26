@@ -35,6 +35,10 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <p>Título do Projeto:<input type="text" class="form-control" required="required" pattern="[A-Z\s]+$"  name="nTitulo" placeholder="Título do projeto de extensão."></p>
 
+        <HR NOSHADE SIZE="4">
+
+        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
         <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <div id="botoesAdicao">
