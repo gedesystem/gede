@@ -36,8 +36,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:</p>
-        <textarea id="iObs" name="nObs" rows="3" cols="80" class="form-control"></textarea>
+        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <HR NOSHADE SIZE="4">
 

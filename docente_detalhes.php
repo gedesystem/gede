@@ -21,7 +21,7 @@ $res = mysql_fetch_assoc($resultado);
     <h2 class="Titulo">Informações do docente</h2>
 
     <div id="botoesEdicao">
-        <form style="display: inline;" method="post" action="bd_docente_editar_cadastro.php">
+        <form style="display: inline;" method="post" action="docente_editar_cadastro.php">
             <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($res['matricula_uefs']); ?>">
             <button type="submit" class="btn btn-default" onclick="return confirm('Deseja editar?')">Editar</button>
         </form>
