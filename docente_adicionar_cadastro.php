@@ -89,6 +89,6 @@
 
 </section>
 
-<script src="js/docente_adicionar_cadastro_form.js"></script>
+<script src="js/adicionar_cadastro_form.js"></script>
 
 <?php include("fim_pagina.php"); ?>
