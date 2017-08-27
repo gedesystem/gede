@@ -51,14 +51,14 @@ if (isset($_POST['usuario'])) {
             $mail->addAddress($email, $nome);
 
             //Seta o assunto
-            $mail->Subject = 'Sistema GEDE: Recuperação de Senha';
+            $mail->Subject = 'Sistema GEDE: Recuperacao de Senha';
 
             //Replace the plain text body with one created manually
-            $mail->Body = "Nome do usuario: $username\n Senha: $senha";
+            $mail->Body = "Nome do usuario: $username\nSenha: $senha";
 
             //send the message, check for errors
             if (!$mail->send()) {
-                echo "Erro ao mandar o email: " . $mail->ErrorInfo;
+                echo "Erro recuperar a senha. Tente novamente mais tarde";
             } else {
                 echo "Sua senha foi enviada para o email informado.";
             }
