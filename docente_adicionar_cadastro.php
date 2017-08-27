@@ -2,7 +2,7 @@
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_cadastro.php">
 
         <h2 class="Titulo">Informações básicas do docente</h2>
 
@@ -45,7 +45,7 @@
 
         <!-- Informações do Docente estrangeiro -->
         <div id="iInfoEstrangeiro" style="display:none" >
-            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do Docente."></p>
+            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do Docente. Utilize letras MAIÚSCULAS"></p>
         </div>
 
         <!-- Informações do docente brasileiro -->
@@ -78,7 +78,7 @@
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <HR NOSHADE SIZE="4">
 
@@ -89,6 +89,6 @@
 
 </section>
 
-<script src="js/docente_adicionar_cadastro_form.js"></script>
+<script src="js/adicionar_cadastro_form.js"></script>
 
 <?php include("fim_pagina.php"); ?>

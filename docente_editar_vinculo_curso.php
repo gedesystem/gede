@@ -14,7 +14,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_vinculo_curso.php">
 
         <h2 class="Titulo">Editar Informações de Vínculo de Docente a Curso</h2>
 
@@ -25,7 +25,7 @@ $res = mysql_fetch_assoc($resultado);
         <p>Código do Curso:<input type="text" class="form-control" required="required" name="nCodigo" pattern="[0-9]+$" placeholder="Código do curso ao qual o docente terá vínculo."
             value="<?php echo($res['codigo_curso']); ?>"></p>
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <div id="botoesAdicao">

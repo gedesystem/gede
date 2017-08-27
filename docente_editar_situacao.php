@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_situacao.php">
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
         <h2 class="Titulo">Editar Situação do Docente na IES</h2>
@@ -53,7 +53,7 @@ $res = mysql_fetch_assoc($resultado);
         <HR NOSHADE SIZE="4">
 
         <p>Término:
-        <input type="text" class="form-control" id="iDataFim" name="nDataFim" required="required"
+        <input type="text" class="form-control" id="iDataFim" name="nDataFim"
             pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
             placeholder="Data do término da situação, separada por barras. Ex: 31/12/1990."
             value="<?php echo(DateTime::createFromFormat('Y-m-d', $res['termino'])->format('d/m/Y')); ?>">
@@ -62,12 +62,12 @@ $res = mysql_fetch_assoc($resultado);
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
+        <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
             value="<?php echo($res['observacoes']); ?>"></p>
 
         <HR NOSHADE SIZE="4">

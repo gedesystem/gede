@@ -1,15 +1,14 @@
-<?php
-include("topo_pagina.php");
+<?php include("topo_pagina.php");
 error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 require_once('funcoes_uteis.php');
-$id_gede = $_POST["id_gede"];
+$codigo_curso = $_POST["codigo_curso"];
 ?>
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_curso_adicionar_dados_censitarios.php">
 
-        <h2 class="Titulo">Dados Censitários de Curso</h2> 
+        <h2 class="Titulo">Dados Censitários de Curso</h2>
 
         <HR NOSHADE SIZE="4">
 
@@ -18,19 +17,27 @@ $id_gede = $_POST["id_gede"];
 
         <p>Curso teve aluno vinculado?:</p>
         <div class="radio">
-            <label><input type="radio" name="nAlunoVinculado" value="1" checked/>Sim</label>
-            <label><input type="radio" name="nAlunoVinculado" value="0">Não</label>
+            <label><input type="radio" name="nAlunoVinculado" value="1" checked onclick="selecionarAlunoVinculado(this.value)"/>Sim</label>
+            <label><input type="radio" name="nAlunoVinculado" value="0" onclick="selecionarAlunoVinculado(this.value)">Não</label>
         </div>
 
-        <p>Motivo do curso sem aluno vinculado:</p>
-        <div class="radio">
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="1" checked/>Curso Extinto</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="2">Curso Novo</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="3">Curso representado por outro código de curso</label>
-            <label><input type="radio" name="nMotivoSemAlunoVinculado" value="4">Curso ativo sem demanda</label>
+        <div id="iMotivoSemAluno" style="display:none">
+            <p>Motivo do curso sem aluno vinculado:</p>
+            <div class="radio">
+                <label><input type="radio" name="nMotivoSemAlunoVinculado" value="1" checked
+                    onclick="selecionarMotivoSemAluno(this.value)"/>Curso Extinto</label>
+                <label><input type="radio" name="nMotivoSemAlunoVinculado" value="2"
+                    onclick="selecionarMotivoSemAluno(this.value)">Curso Novo</label>
+                <label><input type="radio" name="nMotivoSemAlunoVinculado" value="3"
+                    onclick="selecionarMotivoSemAluno(this.value)">Curso representado por outro código de curso</label>
+                <label><input type="radio" name="nMotivoSemAlunoVinculado" value="4"
+                    onclick="selecionarMotivoSemAluno(this.value)">Curso ativo sem demanda</label>
+            </div>
         </div>
 
-        <p>Código do curso representado:<input type="text" class="form-control" required="required" name="nCodigoRepresentado" pattern="[0-9]+$" placeholder="Código do Curso Representado."></p>
+        <div id="iCodCursoRepresentado" style="display:none">
+            <p>Código do curso representado:<input type="text" class="form-control" required="required" name="nCodigoRepresentado" pattern="[0-9]+$" placeholder="Código do Curso Representado."></p>
+        </div>
 
         <p>Curso é financiado por convênio?:</p>
         <div class="radio">
@@ -86,16 +93,20 @@ $id_gede = $_POST["id_gede"];
         <br>
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>
-        </div>   
+        </div>
 
         <HR NOSHADE SIZE="4">
     </form>
 
-    <form method="post" action="curso_detalhes">
-        <input style="display: none;" type="text" name="id_gede" value="<?php echo($id_gede); ?>">
+    <form method="post" action="curso_detalhes.php">
+
+        <input style="display: none;" type="text" name="codigo_curso" value="<?php echo($codigo_curso); ?>">
         <button type="submit" class="btn btn-default"> Voltar </button>
+
     </form>
 
 </section>
+
+<script src="js/curso_adicionar_dados_censitarios.js"></script>
 
 <?php include("fim_pagina.php"); ?>

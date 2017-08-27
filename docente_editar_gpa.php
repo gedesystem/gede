@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_gpa.php">
 
         <h2 class="Titulo">Editar Informações de Gestão, Planejamento ou Avaliação de Docente</h2>
 
@@ -31,12 +31,12 @@ $res = mysql_fetch_assoc($resultado);
 
         <HR NOSHADE SIZE="4">
 
-        <p>Especificação:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nEspecificacao" placeholder="Especificação da ação realizada."
+        <p>Especificação:<input type="text" class="form-control" name="nEspecificacao" placeholder="Especificação da ação realizada."
             value="<?php echo($res['especificacao']); ?>"></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <div id="botoesAdicao">

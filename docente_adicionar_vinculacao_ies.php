@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action="bd_inserir_vinculacao.php">
+    <form method="post" action="bd_docente_adicionar_vinculacao_ies.php">
 
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
@@ -30,7 +30,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>

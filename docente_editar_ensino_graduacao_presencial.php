@@ -14,7 +14,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_ensino_graduacao_presencial.php">
 
         <h2 class="Titulo">Editar Informações de Ensino de Curso de Graduação Presencial</h2>
 
@@ -31,10 +31,10 @@ $res = mysql_fetch_assoc($resultado);
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
-        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
+        <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
             value="<?php echo($res['observacoes']); ?>"></p>
 
         <div id="botoesAdicao">

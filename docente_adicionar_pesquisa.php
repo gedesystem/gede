@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_pesquisa.php">
 
         <h2 class="Titulo">Adicionar Informações de Pesquisa de Docente</h2>
 
@@ -33,13 +33,13 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Título do Projeto:<input type="text" class="form-control" required="required" pattern="[A-Z\s]+$"  name="nTitulo" placeholder="Título do projeto de pesquisa."></p>
+        <p>Título do Projeto:<input type="text" class="form-control" required="required" pattern="[A-Z\s]+$"  name="nTitulo" placeholder="Título do projeto de pesquisa. Utilize letras MAIÚSCULAS"></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
-        
-        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+
+        <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>

@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_vinculacao_ies.php">
 
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
@@ -39,7 +39,7 @@ $res = mysql_fetch_assoc($resultado);
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <div id="botoesAdicao">

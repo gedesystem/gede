@@ -17,13 +17,11 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_cadastro.php">
 
         <h2 class="Titulo">Editar informações básicas do docente</h2>
 
         <HR NOSHADE SIZE="4">
-
-        <p>Matrícula:<input type="text" class="form-control" id="iMatricula" required="required" name="nMatricula" pattern="[0-9]+$" placeholder="Número de matrícula da IES." value="<?php echo($res['matricula_uefs']); ?>"></p>
 
         <p>ID do docente:<input type="text" class="form-control" id="iIdDocente" name="nIdDocente" pattern="[0-9]+$" placeholder="Número fornecido pelo INEP." value="<?php echo($res['id_inep']); ?>"></p>
 
@@ -84,7 +82,7 @@ $res = mysql_fetch_assoc($resultado);
 
         <!-- Informações do Docente estrangeiro -->
         <div id="iInfoEstrangeiro" style="<?php echo(($res['nacionalidade'] == 1) ? 'display:none' : ''); ?>" >
-            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do Docente."
+            <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do Docente. Utilize letras MAIÚSCULAS"
                 value="<?php echo($res['codigo_pais_origem']); ?>"></p>
         </div>
 
@@ -136,7 +134,7 @@ $res = mysql_fetch_assoc($resultado);
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <HR NOSHADE SIZE="4">
@@ -245,6 +243,6 @@ $res = mysql_fetch_assoc($resultado);
 
 </section>
 
-<script src="js/docente_adicionar_cadastro_form.js"></script>
+<script src="js/adicionar_cadastro_form.js"></script>
 
 <?php include("fim_pagina.php"); ?>

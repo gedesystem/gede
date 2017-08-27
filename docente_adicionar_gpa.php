@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_gpa.php">
 
         <h2 class="Titulo">Adicionar Informação de Gestão, Planejamento ou Avaliação de Docente</h2>
 
@@ -22,11 +22,11 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Especificação:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nEspecificacao" placeholder="Especificação da ação realizada."></p>
+        <p>Especificação:<input type="text" class="form-control"  name="nEspecificacao" placeholder="Especificação da ação realizada."></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>

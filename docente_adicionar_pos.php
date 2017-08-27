@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action="bd_inserir_pos_graduacao.php">
+    <form method="post" action="bd_docente_adicionar_pos.php">
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
         <h2 class="Titulo">Pós Graduação de Docente</h2>
@@ -32,11 +32,11 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
         <HR NOSHADE SIZE="4">
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
+        <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."></p>
 
         <HR NOSHADE SIZE="4">
 

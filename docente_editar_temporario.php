@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editartemporario.php">
 
         <h2 class="Titulo">Editar Informação de Docente Temporário</h2>
 
@@ -34,7 +34,7 @@ $res = mysql_fetch_assoc($resultado);
         <HR NOSHADE SIZE="4">
 
         <p>Fim:
-            <input type="text" class="form-control" id="iDataFim" name="nDataFim" required="required"
+            <input type="text" class="form-control" id="iDataFim" name="nDataFim"
                    pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                    placeholder="Data do fim da atuação do docente temporário na instituição. Exemplo: 30/02/2016"
                    value="<?php echo(DateTime::createFromFormat('Y-m-d', $res['fim'])->format('d/m/Y')); ?>">
@@ -65,12 +65,12 @@ $res = mysql_fetch_assoc($resultado);
             <HR NOSHADE SIZE="4">
         </div>
 
-        <p>Fonte:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nFonte" placeholder="Entidade que forneceu estas informações."
+        <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
 
         <HR NOSHADE SIZE="4">
 
-        <p>Observações:<input type="text" class="form-control" pattern="[A-Z\s]+$"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
+        <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."
             value="<?php echo($res['observacoes']); ?>"></p>
 
         <div id="botoesAdicao">
