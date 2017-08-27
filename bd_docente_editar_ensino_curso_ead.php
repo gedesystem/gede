@@ -5,17 +5,13 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 $Id = $_POST["id"];
 
-$data = isset($_POST["data"]);
-$observacoes = isset($_POST["observacoes"]) ? $_POST["observacoes"] : "";
-$id_curso_ead = isset($_POST["id_curso_ead"]);
-$matricula_uefs = isset($_POST["matricula_uefs"]);
-$fonte = isset($_POST["fonte"]);
-$colaborador = isset($_POST["colaborador"]);
+$data = isset($_POST["nData"]);
+$observacoes = isset($_POST["nObservacao"]) ? $_POST["nObservacao"] : "";
+$fonte = isset($_POST["nFonte"]) ? $_POST["nFonte"] : "";
 
 conexao();
 
-$sql_atualiza = "UPDATE docentes_ensino_curso_ead SET data='$data', observacoes='$observacoes',"
-        . " id_curso_ead='$id_curso_ead', matricula_uefs='$matricula_uefs', fonte='$fonte', colaborador='$colaborador' WHERE id=$Id";
+$sql_atualiza = "UPDATE docentes_ensino_curso_ead SET data='$data', observacoes='$observacoes', fonte='$fonte' WHERE id_curso_ead=$Id";
 
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 
@@ -23,5 +19,5 @@ mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error
 echo '<h2 color: #6d7679>Registro atualizado e salvo com sucesso!</h2>';
 echo '<h3 color: #6d7679>Redirecionando em 3 segundos...</h3>';
 
-header("refresh: 2; url=menu_professores.php");
+header("refresh: 2; url=modulo_professores.php");
 ?>

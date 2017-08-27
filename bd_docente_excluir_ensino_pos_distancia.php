@@ -7,12 +7,14 @@ $Id = $_POST["id"];
 
 //Isset dos atributos
 //$exemplo = isset($_POST["exemplo"]);
-
+$data = isset($_POST["nData"]);
+$fonte = isset($_POST["nFonte"]) ? $_POST["nFonte"] : "";
+$observacoes = isset($_POST["nObservacao"]) ? $_POST["nObservacao"] : "";
 
 conexao();
 
 //Criar o comando sql
-$sql_atualiza = "";
+$sql_atualiza = "UPDATE docentes_ensino_pos_distancia SET data='$data', fonte='$fonte', observacoes='$observacoes' WHERE id_pos_distancia='$Id'";
 
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 

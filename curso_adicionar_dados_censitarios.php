@@ -13,7 +13,7 @@ $codigo_curso = $_POST["codigo_curso"];
         <HR NOSHADE SIZE="4">
 
         <p>Ano:</p>
-        <input type="text" name="nTipoAno" class="form-control" pattern="[0-9]+$" placeholder="Ano referente aos dados preenchidos." checked/><br>
+        <input type="text" name="nTipoAno" class="form-control" required="required" pattern="[0-9]+$" placeholder="Ano referente aos dados preenchidos." checked/><br>
 
         <p>Curso teve aluno vinculado?:</p>
         <div class="radio">
