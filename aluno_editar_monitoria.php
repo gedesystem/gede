@@ -17,7 +17,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_aluno_editar_monitoria.php">
 
         <h2 class="Titulo">Editar Informações de Monitoria de Aluno</h2>
 
@@ -44,7 +44,7 @@ $res = mysql_fetch_assoc($resultado);
 
         <p>Fonte:<input type="text" class="form-control"  name="nFonte" placeholder="Entidade que forneceu estas informações."
             value="<?php echo($res['fonte']); ?>"></p>
-            
+
         <div id="botoesAdicao">
             <button type="submit" class="btn btn-primary" value="salvar" >Salvar informações</button>
         </div>

@@ -7,7 +7,7 @@ $matricula = $_POST['matricula_uefs'];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_aluno_adicionar_monitoria.php">
 
         <h2 class="Titulo">Adicionar Informação de Monitoria de Aluno</h2>
 

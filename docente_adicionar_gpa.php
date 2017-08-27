@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_gpa.php">
 
         <h2 class="Titulo">Adicionar Informação de Gestão, Planejamento ou Avaliação de Docente</h2>
 

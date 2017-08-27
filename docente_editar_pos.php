@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action="bd_inserir_pos_graduacao.php">
+    <form method="post" action="bd_docente_editar_pos.php">
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
         <h2 class="Titulo">Editar Pós Graduação de Docente</h2>

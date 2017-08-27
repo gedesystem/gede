@@ -6,7 +6,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_vinculo_curso.php">
 
         <h2 class="Titulo">Adicionar Informações de Vínculo de Docente a Curso</h2>
 

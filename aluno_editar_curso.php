@@ -17,7 +17,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_aluno_editar_curso.php">
 
         <h2 class="Titulo">Editar Vínculo do Aluno ao Curso</h2>
 

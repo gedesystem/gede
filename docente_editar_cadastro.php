@@ -17,7 +17,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_cadastro.php">
 
         <h2 class="Titulo">Editar informações básicas do docente</h2>
 

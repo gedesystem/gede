@@ -2,7 +2,7 @@
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_aluno_adicionar_cadastro.php">
 
         <h2 class="Titulo">Informações básicas do Aluno</h2>
 

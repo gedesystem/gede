@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 ?>
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_aluno_editar_estagio.php">
 
         <h2 class="Titulo">Editar Informações de Estágio de Aluno</h2>
 

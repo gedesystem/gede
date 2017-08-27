@@ -14,7 +14,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_ensino_graduacao_presencial.php">
 
         <h2 class="Titulo">Editar Informações de Ensino de Curso de Graduação Presencial</h2>
 

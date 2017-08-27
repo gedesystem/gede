@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_adicionar_regime_trabalho.php">
 
         <h2 class="Titulo">Adicionar Informações de Regime de Trabalho de Docente</h2>
         Essa sessão refere-se ao regime de trabalho do docente.

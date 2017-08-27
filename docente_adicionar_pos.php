@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action="bd_inserir_pos_graduacao.php">
+    <form method="post" action="bd_docente_adicionar_pos.php">
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 
         <h2 class="Titulo">Pós Graduação de Docente</h2>

@@ -7,7 +7,7 @@ $matricula_uefs = $_POST["matricula_uefs"];
 
 <section>
 
-    <form method="post" action="bd_inserir_vinculacao.php">
+    <form method="post" action="bd_docente_adicionar_vinculacao_ies.php">
 
         <input style="display: none;" type="text" name="matricula_uefs" value="<?php echo($matricula_uefs); ?>">
 

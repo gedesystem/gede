@@ -14,7 +14,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_ediar_ensino_pos_distancia.php">
 
         <h2 class="Titulo">Editar Informações de Curso de Pós-Graduação à Distância de Docente</h2>
 

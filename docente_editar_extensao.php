@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_extensao.php">
 
         <h2 class="Titulo">Editar Informações de Extensão de Docente</h2>
 

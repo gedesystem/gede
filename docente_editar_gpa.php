@@ -15,7 +15,7 @@ $res = mysql_fetch_assoc($resultado);
 
 <section>
 
-    <form method="post" action=".php">
+    <form method="post" action="bd_docente_editar_gpa.php">
 
         <h2 class="Titulo">Editar Informações de Gestão, Planejamento ou Avaliação de Docente</h2>
 
