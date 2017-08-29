@@ -28,7 +28,7 @@ $res = mysql_fetch_assoc($resultado);
 
         <p>CPF do Aluno:<input type="text" class="form-control" required="required" pattern="[0-9]+$" name="nCpf" placeholder="Utilize apenas números."
             value="<?php echo($res['cpf']); ?>"></p>
-
+        
         <p>Nome do Aluno:<input type="text" class="form-control" required="required" name="nNome" pattern="[A-Z\s]+$" placeholder="Preencha o campo com o nome completo. Utilize letras MAIÚSCULAS."
             value="<?php echo($res['nome']); ?>"></p>
 
@@ -86,6 +86,8 @@ $res = mysql_fetch_assoc($resultado);
         <div id="iInfoEstrangeiro" style="<?php echo(($res['nacionalidade'] == 1) ? 'display:none' : ''); ?>" >
             <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do aluno. Utilize letras MAIÚSCULAS."
                 value="<?php echo($res['codigo_pais_origem']); ?>"></p>
+            
+            <p>Documento estrangeiro do aluno:<input type="text" class="form-control" pattern="[0-9]+$" name="nDocumentoEstrangeiro" placeholder="Documento estrangeiro do aluno. Utilize apenas números."></p>
         </div>
 
         <!-- Informações do aluno brasileiro -->

@@ -5,18 +5,16 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 $Id = $_POST["id"];
 
-$matricula_uefs = isset($_POST["matricula_uefs"]);
-$local_trabalho = isset($_POST["local_trabalho"]);
-$inicio = isset($_POST["inicio"]);
-$fim = isset($_POST["fim"]) ? $_POST["fim"] : "";
-$observacao = isset($_POST["observacao"]) ? $_POST["observacao"] : "";
-$fonte = isset($_POST["fonte"]);
-$colaborador = isset($_POST["colaborador"]);
+$local_trabalho = isset($_POST["nLocalTrabalho"]);
+$inicio = isset($_POST["nInicio"]);
+$fim = isset($_POST["nFim"]) ? $_POST["nFim"] : "";
+$observacao = isset($_POST["nObservacao"]) ? $_POST["nObservacao"] : "";
+$fonte = isset($_POST["nFonte"]) ? $_POST["nFonte"] : "";
 
 conexao();
 
-$sql_atualiza = "UPDATE aluno_estagio SET matricula_uefs='$matricula_uefs', local_trabalho='$local_trabalho', inicio='$inicio', fim='$fim', "
-        . "observacao='$observacao', fonte='$fonte', colaborador='$colaborador' WHERE id=$Id";
+$sql_atualiza = "UPDATE aluno_estagio SET local_trabalho='$local_trabalho', inicio='$inicio', fim='$fim', "
+        . "observacao='$observacao', fonte='$fonte' WHERE matricula_uefs=$Id";
 
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 

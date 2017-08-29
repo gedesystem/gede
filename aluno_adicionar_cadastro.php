@@ -48,6 +48,8 @@
         <!-- Informações do aluno estrangeiro -->
         <div id="iInfoEstrangeiro" style="display:none" >
             <p>País de Origem: <input type="text" class="form-control" pattern="[A-Z\s]+$" id="iPaisOrigem" name="nPaisOrigem" placeholder="Código de 3 letras do País do Origem do aluno. Utilize letras MAIÚSCULAS."></p>
+            
+            <p>Documento estrangeiro do aluno:<input type="text" class="form-control" pattern="[0-9]+$" name="nDocumentoEstrangeiro" placeholder="Documento estrangeiro do aluno. Utilize apenas números."></p>
         </div>
 
         <!-- Informações do aluno brasileiro -->

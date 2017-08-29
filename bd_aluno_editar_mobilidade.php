@@ -5,23 +5,21 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 $Id = $_POST["id"];
 
-$matricula_uefs = isset($_POST["matricula_uefs"]);
-$tipo = isset($_POST["tipo"]);
-$ies_destino = isset($_POST["ies_destino"]) ? $_POST["ies_destino"] : "";
-$tipo_mobilidade_internacional = isset($_POST("tipo_mobilidade_internacional")) ? $_POST("tipo_mobilidade_internacional") : "";
-$pais_destino = isset($_POST("pais_destino")) ? $_POST("pais_destino") : "";
-$inicio = isset($_POST["inicio"]);
-$fim = isset($_POST["fim"]) ? $_POST["fim"] : "";
-$observacao = isset($_POST["observacao"]) ? $_POST["observacao"] : "";
-$fonte = isset($_POST["fonte"]);
-$colaborador = isset($_POST["colaborador"]);
+$tipo = isset($_POST["nTipo"]) ? $_POST["nTipo"] : "";
+$ies_destino = isset($_POST["nIESDestino"]) ? $_POST["nIESDestino"] : "";
+$tipo_mobilidade_internacional = isset($_POST("nTipoInternacional")) ? $_POST("nTipoInternacional") : "";
+$pais_destino = isset($_POST("nPaisDestino")) ? $_POST("nPaisDestino") : "";
+$inicio = isset($_POST["nInicio"]);
+$fim = isset($_POST["nFim"]) ? $_POST["nFim"] : "";
+$observacao = isset($_POST["nObservacao"]) ? $_POST["nObservacao"] : "";
+$fonte = isset($_POST["nFonte"]);
 
 conexao();
 
-$sql_atualiza = "UPDATE aluno_mobilidade SET matricula_uefs='$matricula_uefs',"
+$sql_atualiza = "UPDATE aluno_mobilidade SET"
         . " tipo='$tipo', ies_destino='$ies_destino', tipo_mobilidade='$tipo_mobilidade_internacional', pais_destino='$pais_destino',"
         . " inicio='$inicio', fim='$fim', "
-        . "observacao='$observacao', fonte='$fonte', colaborador='$colaborador' WHERE id=$Id";
+        . "observacao='$observacao', fonte='$fonte' WHERE matricula_uefs=$Id";
 
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 
@@ -29,5 +27,5 @@ mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error
 echo '<h2 color: #6d7679>Registro atualizado e salvo com sucesso!</h2>';
 echo '<h3 color: #6d7679>Redirecionando em 3 segundos...</h3>';
 
-header("refresh: 2; url=menu_alunos.php");
+header("refresh: 2; url=modulo_alunos.php");
 ?>

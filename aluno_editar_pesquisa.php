@@ -49,7 +49,7 @@ $res = mysql_fetch_assoc($resultado);
         <p>Início: <input type="text" class="form-control" required="required" name="nInicio" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" placeholder="Data de início da pesquisa, separada por barras. Ex: 01/05/2015."
             value="<?php echo(DateTime::createFromFormat('Y-m-d', $res['inicio'])->format('d/m/Y')); ?>"></p>
 
-        <p>Fim: <input type="text" class="form-control" required="required" name="nFim" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" placeholder="Data de fim da pesquisa, separada por barras. Ex: 01/05/2016."
+        <p>Fim: <input type="text" class="form-control" name="nFim" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" placeholder="Data de fim da pesquisa, separada por barras. Ex: 01/05/2016."
             value="<?php echo(DateTime::createFromFormat('Y-m-d', $res['fim'])->format('d/m/Y')); ?>"></p>
 
         <p>Observações:<input type="text" class="form-control"  name="nObservacao" placeholder="Observações que precisem ser inseridas."

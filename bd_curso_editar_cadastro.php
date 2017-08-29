@@ -5,28 +5,29 @@ error_reporting(E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 $Id = $_POST["id"];
 
-$codigo_curso = $_POST["codigo_curso"];
-$nome = $_POST["nome"];
-$grau = $_POST["grau"];
-$modalidade = $_POST["modalidade"];
-$nivel_academico = $_POST["nivel_academico"];
-$tipo_ingresso = $_POST["tipo_ingresso"];
-$carga_horaria = $_POST["carga_horaria"];
-$inicio_funcionamento = $_POST["inicio_funcionamento"];
-$data_autorizacao = $_POST["data_autorizacao"];
-$situacao_emec = $_POST["situacao_emec"];
+$nome = isset($_POST["nNome"]);
+$grau = isset($_POST["nGrau"]) ? $_POST["nGrau"] : "";
+$modalidade = isset($_POST["nModalidade"]) ? $_POST["nModalidade"] : "";
+$nivel_academico = isset($_POST["nNivel"]) ? $_POST["nNivel"] : "";
+$tipo_ingresso = isset($_POST["nIngresso"]) ? $_POST["nIngresso"] : "";
+$carga_horaria = isset($_POST["nCargaHoraria"]) ? $_POST["nCargaHoraria"] : "";
+$inicio_funcionamento = isset($_POST["nInicio"]) ? $_POST["nInicio"] : "";
+$data_autorizacao = isset($_POST["nAutorizacao"]) ? $_POST["nAutorizacao"] : "";
+$situacao_emec = isset($_POST["nEMEC"]) ? $_POST["nEMEC"] : "";
+$gratuito = isset($_POST["nGratuito"]) ? $_POST["nGratuito"] : "";
+$fonte = isset($_POST["nFonte"]) ? $_POST["nFonte"] : "";
 
 
 conexao();
 
-$sql_atualiza = "UPDATE cursos_dados_cadastrais SET codigo_curso='$CodigoCurso', nome='$Nome', grau='$GrauAcademico', modalidade='$Modalidade',"
-        . " carga_horaria='$CargaHoraria', inicio_funcionamento='$Inicio',"
-        . "situacao_emec='$SituacaoEMEC' WHERE id=$Id";
+$sql_atualiza = "UPDATE cursos_dados_cadastrais SET nome='$nome', grau='$grau', modalidade='$modalidade', nivel_academico='$nivel_academico', tipo_ingresso='$tipo_ingresso', "
+        . " carga_horaria='$carga_horaria', inicio_funcionamento='$inicio_funcionamento', data_autorizacao='$data_autorizacao', "
+        . "situacao_emec='$situacao_emec', gratuito='$gratuito', fonte='$fonte' WHERE codigo_curso=$Id";
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 
 //echo '<img id="home" src="imagens/safebox2.png" width="128" alt="logo"/>';
 echo '<h2 color: #6d7679>Registro atualizado e salvo com sucesso!</h2>';
 echo '<h3 color: #6d7679>Redirecionando em 3 segundos...</h3>';
 
-header("refresh: 2; url=menu_cursos.php");
+header("refresh: 2; url=modulo_cursos.php");
 ?>

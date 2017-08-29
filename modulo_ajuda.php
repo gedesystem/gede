@@ -7,7 +7,7 @@
     Clique sobre uma das opções para obter ajuda. 
     <HR NOSHADE SIZE="4">
 
-    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico1">Título do tópico</a> <br><br>
+    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico1">Como cadastro um novo aluno?</a> <br><br>
 
     <div class="container">
 
@@ -19,10 +19,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Título do tópico</h4>
+                        <h4 class="modal-title">Como cadastro um novo aluno?</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Conteúdo</p>
+                        <p>Para cadastrar um novo aluno, clique no menu "Módulos". Em seguida, selecione o menu "Módulo Discentes". Em "Ações", clique em "Adicionar discente". Preencha as informações básicas do discente e clique em Salvar para finalizar o cadastro.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -34,7 +34,7 @@
 
     </div>
 
-    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico2">Título do tópico</a> <br><br>
+    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico2">Como cadastro um novo professor?</a> <br><br>
 
     <div class="container">
 
@@ -46,10 +46,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Título do tópico</h4>
+                        <h4 class="modal-title">Como cadastro um novo professor?</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Conteúdo</p>
+                        <p>Para cadastrar um novo professor, clique no menu "Módulos". Em seguida, selecione o menu "Módulo Docentes". Em "Ações", clique em "Adicionar docente". Preencha as informações básicas do docente e clique em Salvar para finalizar o cadastro.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -61,7 +61,7 @@
 
     </div>
 
-    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico3">Título do tópico</a> <br><br>
+    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico3">Como gero uma credencial para um usuário temporário?</a> <br><br>
 
     <div class="container">
 
@@ -73,10 +73,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Título do tópico</h4>
+                        <h4 class="modal-title">Como gero uma credencial para um usuário temporário?</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Conteúdo</p>
+                        <p>Para gerar uma nova credencial, clique no menu "Pessoas". Em seguida, selecione o módulo "Credenciais". Clique no botão "Criar credencial" para gerar uma nova credencial.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -88,7 +88,7 @@
 
     </div>
 
-    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico4">Título do tópico</a> <br><br>
+    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico4">Como posso importar uma tabela do Excell para o sistema?</a> <br><br>
 
     <div class="container">
 
@@ -100,10 +100,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Título do tópico</h4>
+                        <h4 class="modal-title">Como posso importar uma tabela do Excell para o sistema?</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Conteúdo</p>
+                        <p>Para importar uma tabela do Excell para o sistema, clique no menu "Migração de dados". Em seguida, selecione o módulo "Importar". Selecione o tipo de informação a ser importada. Faça o download do modelo da tabela para este tipo de informação, caso não possua o modelo. Em posse do modelo, preencha-o com os dados desejados. Após selecionar uma das opções do item 2, carregue o arquivo Excell no item 3. Envie o arquivo para finalizar.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -115,7 +115,7 @@
 
     </div>
 
-    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico5">Título do tópico</a> <br><br>
+    <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#topico5">Como faço para exportar as informações do sistema?</a> <br><br>
 
     <div class="container">
 
@@ -127,10 +127,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Título do tópico</h4>
+                        <h4 class="modal-title">Como faço para exportar as informações do sistema?</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Conteúdo</p>
+                        <p>Para exportar informações do sistema, clique no menu "Migração de dados". Em seguida, selecione o menu "Exportar". Selecione o tipo de informação a ser exportada. O arquivo será gerado pelo sistema para download.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

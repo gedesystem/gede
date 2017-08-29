@@ -15,5 +15,5 @@ mysql_query($sql_seleciona) or die("Não foi possivel excluir:  " . mysql_error(
 echo '<h2 color: #6d7679>Registro deletado com sucesso!</h2>';
 echo '<h3 color: #6d7679>Redirecionando em 2 segundos...</h3>';
 
-header("refresh: 2; url=busca_alunos.php");
+header("refresh: 2; url=modulo_alunos.php");
 ?>
