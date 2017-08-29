@@ -104,8 +104,9 @@ abstract class ImportStrategy
     protected function formatarData(array $linha, ...$posicoes)
     {
         foreach ($posicoes as $posicao) {
-            if (isset($linha[$posicao]) && is_string($linha[$posicao])) {
-                $date = DateTime::createFromFormat('d/m/Y', $linha[$posicao]);
+            if (isset($linha[$posicao])
+                && is_string($linha[$posicao])
+                && (($date = DateTime::createFromFormat('d/m/Y', $linha[$posicao])) === ture)) {
                 $linha[$posicao] = $date->format('Y-m-d');
             } elseif (isset($linha[$posicao]) && ($linha[$posicao] instanceof DateTime)) {
                 $linha[$posicao] = $linha[$posicao]->format('Y-m-d');
