@@ -19,10 +19,10 @@ $colaborador = $_SESSION['nome'];
 conexao();
 
 //Criar o comando sql
-$sql_atualiza = "INSERT INTO `alunos_ingresso`(`matricula_uefs`, `tipo_escola`, `semestre_ingresso`,
-        `forma_ingresso`, `reserva_vagas`, `tipo_reserva`, `financiamento`, `fonte`, `colaborador`)
-        VALUES ('$matricula','$tipoEscola','$semestreIngresso', '$formaIngresso', '$reservaVagas',
-        '$tipoReserva', '$financiamento', '$fonte', '$colaborador')";
+
+$sql_atualiza = "UPDATE `alunos_ingresso` SET `tipo_escola`='$tipoEscola',`semestre_ingresso`='$semestreIngresso',
+        `forma_ingresso`='$formaIngresso',`reserva_vagas`='$reservaVagas',`tipo_reserva`='$tipoReserva',
+        `financiamento`='$financiamento',`fonte`='$fonte',`colaborador`='$colaborador' WHERE `matricula_uefs`='$matricula'";
 
 mysql_query($sql_atualiza) or die("Não foi possivel atualizar:  " . mysql_error());
 
