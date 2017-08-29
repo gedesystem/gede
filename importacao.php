@@ -22,6 +22,7 @@
         <OPTION value = 4> Alunos - Pesquisa
         <OPTION value = 5> Alunos - Dados Cadastrais
         <OPTION value = 23> Alunos - Dados de Cursos
+        <OPTION value = 24> Alunos - Dados de Ingresso
         <OPTION value = 6> Cursos - Dados Censitários
         <OPTION value = 7> Cursos - Dados Cadastrais
         <OPTION value = 8> Cursos - Laboratórios

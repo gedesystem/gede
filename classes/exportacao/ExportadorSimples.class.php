@@ -171,7 +171,11 @@ class ExportadorSimples
             "SELECT `matricula_uefs`, `codigo_curso`, `semestre_ingresso`,
             `semestre_conclusao`, `situacao`, `turno`,`ch_total`,
             `ch_integralizada`, `aluno_parfor`, `observacao`,`fonte`
-            FROM `alunos_dados_cursos`"
+            FROM `alunos_dados_cursos`",
+
+            "SELECT `matricula_uefs`, `tipo_escola`, `semestre_ingresso`,
+            `forma_ingresso`, `reserva_vagas`, `tipo_reserva`, `financiamento`,
+            `fonte` FROM `alunos_ingresso`"
         );
     }
 
