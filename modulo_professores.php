@@ -36,7 +36,7 @@
 
     <br>
 
-    <img class="caps" src="imagens/doc.png"/> Doutores: 0 <br><br>
+    <img class="caps" src="imagens/doc.png"/> Doutores: 1 <br><br>
 
     <img class="caps" src="imagens/mes.png"/> Mestres: 0<br><br>
 
@@ -44,7 +44,7 @@
 
     <img class="caps" src="imagens/gradu.png"/> Graduados: 0<br><br>
 
-    Total de docentes: 0
+    Total de docentes: 1
 
 </section>
 

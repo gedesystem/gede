@@ -14,7 +14,7 @@ require_once('funcoes_uteis.php');
     <h2 class="Titulo">Ações</h2> 
 
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" onclick="location.href = 'adicionar_cooperador'">Adicionar cooperador</button>
+        <button type="button" class="btn btn-default" onclick="location.href = 'gede_adicionar_cooperador'">Adicionar cooperador</button>
     </div>
     
     <HR NOSHADE SIZE="6">
@@ -47,7 +47,7 @@ require_once('funcoes_uteis.php');
                     '<td>' . $res['usuario'] . '</td>' .
                     '<td>' . $res['tipo'] . '</td>' .
                     '<td>' .
-                    '<form style="display: inline;" method="post" action="detalhes_cooperador.php" > <input style="display: none;" type="text" name="id" value="' . $res['id_gede'] . '">'
+                    '<form style="display: inline;" method="post" action="gede_detalhes_cooperador.php" > <input style="display: none;" type="text" name="id" value="' . $res['id_gede'] . '">'
                     . '<button type="submit" class="btn btn-warning">&nbspExibir&nbsp </button> </form>' .
                     '<form style="display: inline;" method="post" action="" > <input type="text" style="display: none;" name="id" value="' . $res['id_gede'] . '">'
                     . '<button type="submit" class="btn btn-danger" onclick="return confirm(\'Deseja mesmo excluir?\')">Excluir</button> </form>' .

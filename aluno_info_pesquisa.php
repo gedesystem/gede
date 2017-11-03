@@ -1,16 +1,20 @@
-<img width="25" src ="imagens/mobilidade.png"> Mobilidade acadêmica <br><br>
+<img width="25" src ="imagens/pesquisa.png"> Projeto de pesquisa <br><br>
 
-<p>Tipo: <span style="color: #737373"> <?php echo('Internacional'); ?></span></p>
+<p>Título do projeto: <span style="color: #737373"> <?php echo('Biomassa nas receitas do Brasil'); ?></span></p>
 
-<p>Tipo Mobilidade Internacional: <span style="color: #737373"> <?php echo('Ciência sem froteiras'); ?> </span></p>
+<p>Título do projeto: <span style="color: #737373"> <?php echo('Biomassa em receitas baianas'); ?> </span></p>
 
-<p>País: <span style="color: #737373"> <?php echo EUA; ?> </span></p>
+<p>Orientador: <span style="color: #737373"> <?php echo ('Maria Luiza da Silva'); ?> </span></p>
+
+<p>Modalidade: <span style="color: #737373"> <?php echo Fapesb; ?> </span></p>
+
+<p>Remoneração: <span style="color: #737373"> <?php echo Sim; ?> </span></p>
 
 <p>Início: <span style="color: #737373"> <?php echo('30/09/2015'); ?> </span></p>
 
-<p>Fim: <span style="color: #737373"> <?php echo('30/09/2016'); ?> </span></p>
+<p>Fim: <span style="color: #737373"> <?php echo('30/12/2015'); ?> </span></p>
 
-<p>Observações: <span style="color: #737373"> <?php echo('Nenhuma observação registrada'); ?> </span></p>
+<p>Observações: <span style="color: #737373"> <?php echo('Aluno desligado do projeto.'); ?> </span></p>
 
 <!-- Links -->
 <img width="20" src ="imagens/topico.png"><a data-toggle="modal" href="#myModal">Informações de importação</a>
@@ -30,7 +34,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Colaborador: Júlio</p>
-                    <p>Fonte: Assessoria especial de informática</p>
+                    <p>Fonte: PPPG</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
